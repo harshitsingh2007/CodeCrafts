@@ -55,7 +55,7 @@ function Form(){
             </a>
         </div>
     </div>
-        </div>
+</div>
     );
 }
 export default Form;
