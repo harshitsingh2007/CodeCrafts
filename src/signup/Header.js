@@ -1,4 +1,4 @@
-import codecraft from "./codecrafts.png"
+import codecraft from "../codecrafts.png"
 function Header(){
     return(
         <div className="heading">

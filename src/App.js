@@ -1,16 +1,18 @@
-import logo from './logo.svg';
+import react, { useState } from 'react'
 import './App.css';
-import Header from './Header';
-import Body from './Body';
-import Form from './Form';
-import Footer from './Footer';
+import SignUp from './signup/SignUp';
+import './App.css'
+import LoginPage from './login/LoginPage';
+
 function App() {
+  const [st,stt]=useState(false)
+  function changepage(){
+      stt(!st)
+  }
   return (
     <div className="App">
-     <Header />
-     <Body />
-     <Form />
-     <Footer />
+      {st?<LoginPage />:<SignUp/>}
+     <button onClick={changepage}>click here to change the page</button>
     </div>
   );
 }

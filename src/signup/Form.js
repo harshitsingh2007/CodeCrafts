@@ -9,7 +9,7 @@ function Form(){
         </div>
 
         <div className="form-child">
-        <input type="email" required placeholder="Confirn Email"></input>
+        <input type="email" required placeholder="Confirm Email"></input>
         </div>
 
         <div className="form-child">
