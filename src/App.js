@@ -1,20 +1,16 @@
-import react, { useState } from 'react'
-import './App.css';
+// import react, { useState } from 'react'
+import './MainPage/Main.css'
+import { MainPage } from './MainPage/MainPage';
 import SignUp from './signup/SignUp';
 import './App.css'
-import LoginPage from './login/LoginPage';
-
+import React from 'react';
 function App() {
-  const [st,stt]=useState(false)
-  function changepage(){
-      stt(!st)
-  }
-  return (
-    <div className="App">
-      {st?<LoginPage />:<SignUp/>}
-     <button onClick={changepage}>click here to change the page</button>
-    </div>
+  return ( 
+    // <SignUp/>
+    <MainPage/>
+    
   );
 }
-
 export default App;
+
+
