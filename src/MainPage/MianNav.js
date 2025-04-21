@@ -9,47 +9,57 @@ function MainNav() {
   };
 
   return (
-    <header className="sticky-nav">
-      <nav>
-        <div className="logo">
-          <a href="">
-            <img src={codecrafts} alt="CodeCrafts Logo"/>
+    <div className="nav-container">
+      <div className="nav-wrapper">
+        {/* Logo */}
+        <div className="nav-logo">
+          <a href="/">
+            <img src={codecrafts} alt="CodeCrafts Logo" />
           </a>
         </div>
 
-        <div className={`desktop-menu ${isMenuOpen ? 'active' : ''}`}>
+        {/* Desktop Navigation */}
+        <div className="nav-desktop">
           <div className="nav-links">
-            <a href="">
-              <p>TEMPLATES</p>
-            </a>
-            <a href="">
-              <p>DESIGNS</p>
-            </a>
+            <a href="/templates" className="nav-link">Templates</a>
+            <a href="/designs" className="nav-link">Designs</a>
           </div>
 
-          <div className="search-bar">
-            <input type="text" placeholder="Search..."/>
+          <div className="nav-search">
+            <input type="text" placeholder="Search..." />
           </div>
 
-          <div className="auth-links">
-            <a href="">
-              <p>LOGIN</p>
-            </a>
-            <a href="https://signup-harshitsingh2007s-projects.vercel.app/">
-              <p>SIGN UP</p>
-            </a>
+          <div className="nav-auth">
+            <a href="/login" className="nav-login">Login</a>
+            <a href="/signup" className="nav-signup">Sign Up</a>
           </div>
         </div>
 
-        <div className="nav-bar-toggle" onClick={toggleMenu}>
-          <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
-          <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
-          <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
+        {/* Mobile Toggle Button */}
+        <div className={`nav-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
-        <button className="dark-light">Light mode</button>
-      </nav>
-    </header>
+        {/* Mobile Menu */}
+        <div className={`nav-mobile ${isMenuOpen ? 'active' : ''}`}>
+          <div className="mobile-links">
+            <a href="/templates" className="nav-link">Templates</a>
+            <a href="/designs" className="nav-link">Designs</a>
+          </div>
+
+          <div className="mobile-search">
+            <input type="text" placeholder="Search..." className="nav-search" />
+          </div>
+
+          <div className="mobile-auth">
+            <a href="/login" className="nav-login">Login</a>
+            <a href="/signup" className="nav-signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
