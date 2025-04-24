@@ -2,11 +2,10 @@ import './MainPage/Main.css'
 import { MainPage } from './MainPage/MainPage';
 import './App.css'
 import React from 'react';
-import NavbarNew from './NavbarNew';
-import './Navbar.css'
+import '../src/MainPage/Navbar.css'
 function App() {
   return (
-    <MainPage/>  
+    <MainPage/>
   ); 
 }
 export default App;
