@@ -1,0 +1,283 @@
+:root{
+    --design-template-background: #F2F2F2;
+    --black:#000000;
+}
+.designtemplate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 3em;
+    background-color: var(--design-template-background);
+}
+.designtemplate h1{
+    font-size: 4em;
+    margin-bottom: 0.2em;
+    font-weight: lighter;
+    max-width: 800px;
+    letter-spacing: 0.5px; 
+}
+.designtemplate p{
+    margin: 0 auto 2em auto;
+    max-width: 600px;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    letter-spacing: 0.5px; 
+    text-align: center;
+}
+.designtemplate a {
+    padding: 0.8em 2em;
+    font-size: 18px;
+    color: #fff;
+    background-color: var(--black);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .designtemplate a::after {
+    content: '→';
+    margin-left: 10px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+  
+  .designtemplate a:hover::after {
+    transform: translateX(5px); 
+  }
+
+.designtemplate-image img{
+    object-fit: cover;
+    object-position: 50% 50%;
+    width:100%;
+    margin-top: 2em;
+}
+/* desingn template */
+
+
+/* explore design */
+.explore-design{
+ padding-top: 9.376em;
+ padding-left: 4.426em;
+ padding-right: 4.426em;
+ background-color: #FFFFFF;
+}
+.explore-design-container{
+  display: flex;
+  justify-content: space-between;
+}
+.explore-design-header{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.explore-design-header h1{
+    font-size: 4em;
+    margin-bottom: 0.2em;
+    font-weight: 100;
+    max-width: 800px;
+    letter-spacing: 0.5px; 
+}
+.explore-design-header p{
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 480px;
+    letter-spacing: 0.5px;
+    margin-right: 100px;
+}
+.explore-design-header a {
+  padding: 0.8em 1em;
+  font-size: 18px;
+  color: #fff;
+  background-color: var(--black);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  width: auto;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-decoration: none;
+  position: relative; 
+  overflow: hidden; 
+}
+
+.explore-design-header a::after {
+  content: '→';
+  margin-left: 0; 
+  font-size: 20px;
+  display: inline-block; 
+  transform: translateX(-20px); 
+  opacity: 0; 
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+.explore-design-header a:hover::after {
+  transform: translateZ(5px); 
+  opacity: 1; 
+  margin-left: 10px; 
+}
+.explore-design-container-2{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+.explore-design-card{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 4em;
+}
+.explore-design-card img{
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+.card-image-1{
+width: 568px;
+}
+.card-image-2{
+  width: 176px;
+  height: 327px;
+}
+.explore-design-card a{
+  text-decoration: underline;
+  margin-top: 20px;
+  line-height: 1.6;
+  font-size: 15px;
+  cursor: pointer;
+}
+.explore-design-card a::after{
+  content: '→';
+  margin-left: 0; 
+  font-size: 20px;
+  display: inline-block; 
+  transform: translateX(-20px); 
+  opacity: 0; 
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+.explore-design-card a:hover::after {
+  transform: translateZ(5px); 
+  opacity: 1; 
+  margin-left: 10px; 
+}
+.explore-design-card a:hover{
+  color: var(--black);
+}
+/* explore design */
+
+/* join platform */
+.join-platform{
+  margin-top: 2em;
+  padding-top: 9.376em;
+  padding-left: 4.426em;
+  padding-right: 4.426em;
+  padding-bottom: 5em;
+  background-color:var(--design-template-background);
+}
+.join-platform-contianer-1 h1{
+  font-size: 3em;
+  margin-bottom: 0.2em;
+  font-weight: 100;
+  max-width: 700px;
+  letter-spacing: 0.5px; 
+}
+.join-platform-contianer-1 a{
+  margin-top: 20px;
+  padding: 0.8em 1em;
+  font-size: 18px;
+  color: #fff;
+  background-color: var(--black);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+  width: auto;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-decoration: none;
+}
+.join-platform-contianer-1 a::after {
+  content: '→';
+  margin-left: 0; 
+  font-size: 20px;
+  display: inline-block; 
+  transform: translateX(-20px); 
+  opacity: 0; 
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+.join-platform-contianer-1 a:hover::after {
+  transform: translateZ(5px); 
+  opacity: 1; 
+  margin-left: 10px; 
+}
+
+.join-platform-container-2{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4em;
+}
+.join-platform-container-2-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 1.5em;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+.join-platform-container-2-child img{
+  width: 617px;
+  border-radius: 20px;
+}
+.join-platform-container-2-child-text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3em;
+}
+.join-platform-container-2-child-text h3{
+  font-size: 2em;
+  font-weight: 100;
+  max-width: 400px;
+  letter-spacing: 0.5px;
+}
+.join-platform-container-2-child-text a{
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--black);
+  padding: 0.8em 1em;
+  border-radius: 30px;
+}
+.join-platform-container-2-child-text a::after{
+  content: '→';
+  margin-left: 0; 
+  font-size: 20px;
+  display: inline-block; 
+  transform: translateX(-20px); 
+  opacity: 0; 
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+.join-platform-container-2-child-text a:hover::after {
+  transform: translateZ(5px); 
+  opacity: 1; 
+  margin-left: 10px;
+}
+/* join platform */
+

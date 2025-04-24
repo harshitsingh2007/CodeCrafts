@@ -1,0 +1,33 @@
+*{
+ font-family: poppins, sans-serif;
+}
+nav{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 10px 20px;
+}
+.grid-card-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.bar{
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 5px;
+}
+.Logo img{
+    height: 40px;
+    margin-left: 150px;
+}
+nav a{
+    text-decoration: none;
+    color:black;
+    font-size: 18px;
+    margin: 0 15px;
+    font-weight: 600;
+}

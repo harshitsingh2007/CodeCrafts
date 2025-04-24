@@ -1,15 +1,13 @@
-// import react, { useState } from 'react'
 import './MainPage/Main.css'
 import { MainPage } from './MainPage/MainPage';
-import SignUp from './signup/SignUp';
 import './App.css'
 import React from 'react';
+import NavbarNew from './NavbarNew';
+import './Navbar.css'
 function App() {
-  return ( 
-    // <SignUp/>
-    <MainPage/>
-    
-  );
+  return (
+    <MainPage/>  
+  ); 
 }
 export default App;
 
