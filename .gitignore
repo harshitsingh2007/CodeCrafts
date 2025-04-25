@@ -24,3 +24,4 @@ yarn-error.log*
 
 #under workspace
 src/ContactUs/
+src/MainPage/MainNav/
