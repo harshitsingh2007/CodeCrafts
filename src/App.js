@@ -7,7 +7,9 @@ import TemplateMain from './Template/TemplateMain'
 import ContactUs from './ContactUs/ContactUs';
 function App() {
   return (
-    <MainPage/>
+    // <MainPage/>
+    // <TemplateMain/>
+    <ContactUs/>
   ); 
 }
 export default App;
