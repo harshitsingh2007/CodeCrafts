@@ -1,6 +1,7 @@
 import React from 'react';
+export default function Slogen({main}) {
 
-export default function Slogen() {
+  
   return (
     <div className="slogen-container">
       <div className="slogen">
@@ -18,7 +19,8 @@ export default function Slogen() {
           
           <div className="slogen-content3-buttons">
             <div className="slogen-content3-items">
-              <a href="/build" className="cta-button">Start building</a>
+              <button className="cta-button" onClick={main} >Start building</button>
+              
             </div>
             <div className="slogen-content3-items2">
               <a href="/contact" className="cta-button secondary">Contact US</a>

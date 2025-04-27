@@ -1,15 +1,16 @@
- import React from 'react'
+import React from 'react'
 import Headerlogin from './Headerlogin';
 import Bodylogin from './BodyLogin';
 import FormLogin from './FormLogin';
-import FooterLogin from './FooterLogin';
+import '../signup/Signup.css'
+import Footer from '../signup/Footer';
 const LoginPage = () => {
     return (
-        <>
+    <>
     <Headerlogin />
     <Bodylogin />
     <FormLogin />
-    <FooterLogin />
+    <Footer/>
     </>
    );
  }

@@ -1,0 +1,260 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --black: black;
+    --form-input: #88B6FF;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading {
+    padding-top: 1em;
+    padding-left: 2em;
+}
+
+.Code-craft-logo {
+    width: 150px;
+}
+
+.body-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    text-align: center;
+}
+
+.body-container h1 {
+    font-size: 3em;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.body-container span {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+.body-item1 a {
+    text-decoration: none;
+    color: #116dff;
+    margin: 5px;
+}
+
+.body-item1 a:hover {
+    text-decoration: underline;
+}
+
+/* form started */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+}
+
+.form-child {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding-right: 1em;
+}
+
+.form-child input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 1em;
+    padding-right: 2em;
+    font-size: 16px;
+    text-overflow: clip;
+}
+
+.form-child input:hover {
+    border-bottom: 1px solid var(--form-input);
+}
+
+.form-child button {
+    border: 1px solid #8FA6E4;
+    color: #116dff;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-top: 1em;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: white;
+}
+
+.form-child button:hover {
+    background-color: #116dff;
+    color: white;
+}
+.show-password{
+    text-decoration: none;
+    color: white;
+    margin-top: 1em;
+    font-size: 16px;
+    background-color: black;
+    max-width: max-content;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+/* form ended */
+
+/* or-line */
+.or-line-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.or-line {
+    background-color: #E6EAEF;
+    height: 150px;
+    width: 1px;
+}
+
+/* or-line */
+
+/* google login */
+.google-login-container {
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+}
+.google-login-child{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    background-color:#1A73E8;
+    width: 300px;
+    margin-left: 50px;
+    height: 50px;
+}
+.google-login-child:last-child{
+    background-color: #3B5998;
+    margin-top: 20px;
+}
+.google-login-child span{
+  font-size: 16px;
+  color: white;
+  margin-left: 40px;
+}
+.google-login-child img{
+    height: 34px;
+    margin-left: 5px;
+}
+.google-login-img{
+    padding-right: 14px;
+    border-right: 2px solid white;
+}
+/* google login */
+
+/* footer */
+.footer-container-signup{
+    margin-top: 50px;
+}
+.footer-item-signup{
+    color: #595d70;
+    font-size: 12px;
+    text-align: center;
+}
+
+.footer-item-signup a {
+    text-decoration: none;
+    text-decoration: underline;
+    margin: 2px;
+    color: #595d70;
+}
+
+/* footer */
+
+/* Media Queries */
+/* @media (max-width: 1199.98px) {
+    .body-container h1 {
+        font-size: 2.5em;
+    }
+    
+    .google-container {
+        padding: 2em;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .or-line-container {
+        flex-direction: row;
+        margin: 20px 0;
+    }
+    
+    .or-line {
+        height: 1px;
+        width: 100px;
+    }
+    
+    .google-container {
+        margin-left: 0;
+        padding: 1em;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .heading {
+        padding-left: 1em;
+    }
+    
+    .body-container h1 {
+        font-size: 2em;
+    }
+    
+    .body-container span {
+        font-size: 16px;
+    }
+    
+    .form-child input {
+        width: 100%;
+    }
+    
+    .google-item button {
+        width: 250px;
+    }
+}
+
+
+@media (max-width: 575.98px) {
+    .Code-craft-logo {
+        width: 120px;
+    }
+    
+    .body-container h1 {
+        font-size: 1.5em;
+    }
+    
+    .form-child {
+        width: 80%;
+        margin: 10px;
+    }
+    
+    .google-item button {
+        width: 220px;
+    }
+    
+    .google-item span {
+        font-size: 14px;
+        margin-right: 15px;
+    }
+    
+    .google-image {
+        padding: 0.8em;
+    }
+} */
