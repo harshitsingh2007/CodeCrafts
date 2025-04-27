@@ -1,8 +1,28 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 
 function Banner() {
+    const [show, hide] = useState(false)
     return (
+        <>
+        {/* enqire now form */}
+    <div className={`enquire-now-hide ${show? 'enquire-now':''}`}>
+      <div className="enquire-now-container">
+        <button onClick={()=>hide(!show)} className='cross-toggle-button'>
+        <div className='cross-toggle'></div>
+        </button>
+        <h1>Enquire Now</h1>
+        <p>Fill out the form below and we'll get back to you</p>
+        
+      
+        <form className="enquire-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="3" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    {/* enquire now form end */}
         <div className="banner-container">
             <div className="banner">
                 <div className="banner-content">
@@ -30,7 +50,7 @@ function Banner() {
                     </div>
 
                     <div>
-                        <button className="banner-button">Start</button>
+                        <button className="banner-button" onClick={()=>hide(!show)}>Start</button>
                     </div>
                 </div>
 
@@ -59,6 +79,7 @@ function Banner() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
