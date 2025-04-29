@@ -13,7 +13,7 @@ export const MainPage = ({main}) => {
   return (
   <>
   
-<NavbarNew/>
+    <NavbarNew/>
 <Banner/>
 <Slogen main={main} />
 <Collaboration/>
