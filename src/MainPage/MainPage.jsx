@@ -6,16 +6,14 @@ import BuyDomain from './BuyDomain'
 import TipsForWeb from './TipsForWeb'
 import Footer from './Footer'
 import NavbarNew from './NavbarNew'
-import '../MainPage/Main.css'
-import '../MainPage/Navbar.css'
-export const MainPage = ({main}) => {
-
+import './Main.module.css'
+import '../MainPage/Navbar.module.css'
+export  const MainPage = () => {
   return (
   <>
-  
-    <NavbarNew/>
+<NavbarNew/>
 <Banner/>
-<Slogen main={main} />
+<Slogen/>
 <Collaboration/>
 <BuyDomain/>
 <TipsForWeb/>

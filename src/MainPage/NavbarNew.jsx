@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './Navbar.module.css';
 import Codecrafts from '../codecrafts.png';
-
 
 export default function NavbarNew() {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
@@ -10,72 +11,70 @@ export default function NavbarNew() {
   };
 
   return (
-    <header>
-      <nav>
-        <div className='grid-card-1'>
-          <div className='Toggle' onClick={toggleMegaMenu}>
-            <div className={`bar ${isMegaMenuOpen ? 'bar-active' : ''}`}></div>
-            <div className={`bar ${isMegaMenuOpen ? 'bar-active' : ''}`}></div>
-            <div className={`bar ${isMegaMenuOpen ? 'bar-active' : ''}`}></div>
+    <header className={styles.navbar}>
+      <nav className={styles.nav}>
+        <div className={styles.gridCard1}>
+          <div className={styles.toggle} onClick={toggleMegaMenu}>
+            <div className={`${styles.bar} ${isMegaMenuOpen ? styles.barActive : ''}`}></div>
+            <div className={`${styles.bar} ${isMegaMenuOpen ? styles.barActive : ''}`}></div>
+            <div className={`${styles.bar} ${isMegaMenuOpen ? styles.barActive : ''}`}></div>
           </div>
           
           <div>
-            <a href="#">Design</a>
-            <a href="#">Template</a>
+            <Link to="/design" className={styles.navLink}>Design</Link>
+            <Link to="/template" className={styles.navLink}>Template</Link>
           </div>
         </div>
 
-        <div className='grid-card-2'>
-          <div className='Logo'>
+        <div className={styles.gridCard2}>
+          <div className={styles.logo}>
             <img src={Codecrafts} alt="CodeCrafts Logo" />
           </div>
         </div>
 
-        <div className='grid-card-3'>
-          <div>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </div>
+        <div className={styles.gridCard3}>
+          <Link to="/" className={styles.navLink}>Home</Link>
+          <Link to="/about" className={styles.navLink}>About</Link>
+          <Link to="/contact" className={styles.navLink}>Contact</Link>
         </div>
       </nav>
 
       {isMegaMenuOpen && (
-        <div className="mega-menu">
-          <div className="mega-menu-container">
-            <div className="mega-menu-column">
+        <div className={styles.megaMenu}>
+          <div className={styles.megaMenuContainer}>
+            <div className={styles.megaMenuColumn}>
               <h3>Design Resources</h3>
-              <ul>
-                <li><a href="#">UI Components</a></li>
-                <li><a href="#">Color Palettes</a></li>
-                <li><a href="#">Typography</a></li>
-                <li><a href="#">Icon Libraries</a></li>
+              <ul className={styles.megaMenuList}>
+                <li><a href="#" className={styles.megaMenuLink}>UI Components</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>Color Palettes</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>Typography</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>Icon Libraries</a></li>
               </ul>
             </div>
-            <div className="mega-menu-column">
+            <div className={styles.megaMenuColumn}>
               <h3>Templates</h3>
-              <ul>
-                <li><a href="#">Landing Pages</a></li>
-                <li><a href="#">Admin Dashboards</a></li>
-                <li><a href="#">E-commerce</a></li>
-                <li><a href="#">Portfolio</a></li>
+              <ul className={styles.megaMenuList}>
+                <li><a href="#" className={styles.megaMenuLink}>Landing Pages</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>Admin Dashboards</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>E-commerce</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>Portfolio</a></li>
               </ul>
             </div>
-            <div className="mega-menu-column">
+            <div className={styles.megaMenuColumn}>
               <h3>Resources</h3>
-              <ul>
-                <li><a href="#">Tutorials</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">Community</a></li>
-                <li><a href="#">Support</a></li>
+              <ul className={styles.megaMenuList}>
+                <li><a href="#" className={styles.megaMenuLink}>Tutorials</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>Documentation</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>Community</a></li>
+                <li><a href="#" className={styles.megaMenuLink}>Support</a></li>
               </ul>
             </div>
-            <div className="mega-menu-column">
+            <div className={styles.megaMenuColumn}>
               <h3>Featured</h3>
-              <div className="featured-item">
+              <div className={styles.featuredItem}>
                 <h4>New Course</h4>
                 <p>React Design Patterns for Modern Applications</p>
-                <a href="#" className="featured-link">Learn More</a>
+                <a href="#" className={styles.featuredLink}>Learn More</a>
               </div>
             </div>
           </div>

@@ -1,7 +1,8 @@
+import styles from '../signup/Signup.module.css'
 function Bodylogin(){
     return(
-      <div className="body-container">
-            <div className="body-item1">
+      <div className={styles.bodyContainer}>
+            <div className={styles.bodyItem1}>
             <h1>Login Up to CodeCrafts</h1>
             <span>Not Have an Account?</span>
                 <span>

@@ -2,9 +2,9 @@ import React from 'react'
 import Headerlogin from './Headerlogin';
 import Bodylogin from './BodyLogin';
 import FormLogin from './FormLogin';
-import '../signup/Signup.css'
+import '../signup/Signup.module.css'
 import Footer from '../signup/Footer';
-const LoginPage = () => {
+export const LoginPage = () => {
     return (
     <>
     <Headerlogin />
@@ -15,4 +15,3 @@ const LoginPage = () => {
    );
  }
  
-export default LoginPage;

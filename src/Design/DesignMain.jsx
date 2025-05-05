@@ -1,5 +1,5 @@
 import React from 'react'
-import './Design.css'
+import './Design.module.css'
 import DesignTemplate from './DesignTemplate'
 import ExploreDesign from './ExploreDesign'
 import JoinPlatorm from './JoinPlatorm'
