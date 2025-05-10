@@ -10,6 +10,10 @@ export default function NavbarNew() {
     setIsMegaMenuOpen(!isMegaMenuOpen);
   };
 
+let username=localStorage.getItem("userdata")
+let userdata=JSON.parse(username)
+
+
   return (
     <header className={styles.navbar}>
       <nav className={styles.nav}>
@@ -36,6 +40,7 @@ export default function NavbarNew() {
           <Link to="/" className={styles.navLink}>Home</Link>
           <Link to="/about" className={styles.navLink}>About</Link>
           <Link to="/contact" className={styles.navLink}>Contact</Link>
+          <p>{userdata.uname}</p>
         </div>
       </nav>
 

@@ -1,7 +1,13 @@
 import React from 'react'
-
+import styles from './TemplateDiscription.module.css'
+import NavbarNew from '../MainPage/NavbarNew'
+import Footer from '../MainPage/Footer.js'
 export default function TemplatesDiscription() {
   return (
-    <div>TemplatesDiscription</div>
+    <>
+    <NavbarNew/>
+    <h1 className={styles.disprition}>hello templates discription</h1>
+    <Footer/>
+    </>
   )
 }
