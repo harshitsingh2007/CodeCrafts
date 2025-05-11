@@ -28,7 +28,7 @@ function FormLogin() {
         try {
             const storedData = localStorage.getItem('userdata');
             
-            // Check if user data exists
+           
             if (!storedData) {
                 toast.error('No account found. Please register first.');
                 return;
@@ -36,13 +36,13 @@ function FormLogin() {
 
             const gotData = JSON.parse(storedData);
             
-            // Validate data structure
+            
             if (!gotData?.uemail || !gotData?.upassword) {
                 toast.error('Invalid account data. Please register again.');
                 return;
             }
 
-            // Verify credentials
+  
             if (userdata.remail === gotData.uemail && userdata.rpassword === gotData.upassword) {
                 toast.success('Login successful!');
                 setTimeout(() => navigate('/'), 1500);

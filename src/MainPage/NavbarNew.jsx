@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Codecrafts from '../codecrafts.png';
 
 export default function NavbarNew() {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    // Safely get and parse user data
+    try {
+      const storedData = localStorage.getItem('userdata');
+      if (storedData) {
+        setUserData(JSON.parse(storedData));
+      }
+    } catch (error) {
+      console.error('Error parsing user data:', error);
+    }
+  }, []);
 
   const toggleMegaMenu = () => {
     setIsMegaMenuOpen(!isMegaMenuOpen);
   };
-
-let username=localStorage.getItem("userdata")
-let userdata=JSON.parse(username)
-
 
   return (
     <header className={styles.navbar}>
@@ -40,7 +49,11 @@ let userdata=JSON.parse(username)
           <Link to="/" className={styles.navLink}>Home</Link>
           <Link to="/about" className={styles.navLink}>About</Link>
           <Link to="/contact" className={styles.navLink}>Contact</Link>
-          <p>{userdata.uname}</p>
+          {userData?.uname ? (
+            <p className={styles.username}>{userData.uname}</p>
+          ) : (
+            <Link to="/login" className={styles.navLink}>Login</Link>
+          )}
         </div>
       </nav>
 
@@ -50,28 +63,28 @@ let userdata=JSON.parse(username)
             <div className={styles.megaMenuColumn}>
               <h3>Design Resources</h3>
               <ul className={styles.megaMenuList}>
-                <li><a href="#" className={styles.megaMenuLink}>UI Components</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>Color Palettes</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>Typography</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>Icon Libraries</a></li>
+                <li><Link to="/components" className={styles.megaMenuLink}>UI Components</Link></li>
+                <li><Link to="/colors" className={styles.megaMenuLink}>Color Palettes</Link></li>
+                <li><Link to="/typography" className={styles.megaMenuLink}>Typography</Link></li>
+                <li><Link to="/icons" className={styles.megaMenuLink}>Icon Libraries</Link></li>
               </ul>
             </div>
             <div className={styles.megaMenuColumn}>
               <h3>Templates</h3>
               <ul className={styles.megaMenuList}>
-                <li><a href="#" className={styles.megaMenuLink}>Landing Pages</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>Admin Dashboards</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>E-commerce</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>Portfolio</a></li>
+                <li><Link to="/templates/landing" className={styles.megaMenuLink}>Landing Pages</Link></li>
+                <li><Link to="/templates/admin" className={styles.megaMenuLink}>Admin Dashboards</Link></li>
+                <li><Link to="/templates/ecommerce" className={styles.megaMenuLink}>E-commerce</Link></li>
+                <li><Link to="/templates/portfolio" className={styles.megaMenuLink}>Portfolio</Link></li>
               </ul>
             </div>
             <div className={styles.megaMenuColumn}>
               <h3>Resources</h3>
               <ul className={styles.megaMenuList}>
-                <li><a href="#" className={styles.megaMenuLink}>Tutorials</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>Documentation</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>Community</a></li>
-                <li><a href="#" className={styles.megaMenuLink}>Support</a></li>
+                <li><Link to="/tutorials" className={styles.megaMenuLink}>Tutorials</Link></li>
+                <li><Link to="/docs" className={styles.megaMenuLink}>Documentation</Link></li>
+                <li><Link to="/community" className={styles.megaMenuLink}>Community</Link></li>
+                <li><Link to="/support" className={styles.megaMenuLink}>Support</Link></li>
               </ul>
             </div>
             <div className={styles.megaMenuColumn}>
@@ -79,7 +92,7 @@ let userdata=JSON.parse(username)
               <div className={styles.featuredItem}>
                 <h4>New Course</h4>
                 <p>React Design Patterns for Modern Applications</p>
-                <a href="#" className={styles.featuredLink}>Learn More</a>
+                <Link to="/courses/react" className={styles.featuredLink}>Learn More</Link>
               </div>
             </div>
           </div>
