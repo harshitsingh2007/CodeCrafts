@@ -44,7 +44,6 @@ const allroutes = createBrowserRouter([
     element: <ContactUs />
   }
 ]);
-
 function App() {
   return (
       <RouterProvider router={allroutes} />
@@ -52,5 +51,4 @@ function App() {
 }
 
 export default App;
-
 
