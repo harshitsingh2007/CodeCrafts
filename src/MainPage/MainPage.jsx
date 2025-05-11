@@ -12,7 +12,7 @@ export  const MainPage = () => {
   return (
   <>
 <NavbarNew/>
-<Banner/>
+<Banner />
 <Slogen/>
 <Collaboration/>
 <BuyDomain/>
