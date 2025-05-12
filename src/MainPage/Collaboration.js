@@ -1,6 +1,7 @@
-import React from 'react'
-import Collaborationimages from '../images/partner-slider-codecrafts.png'
-import styles from './Main.module.css'
+import React from 'react';
+import Collaborationimages from '../images/partner-slider-codecrafts.png';
+import styles from './Main.module.css';
+
 export default function Collaboration() {
   return (
     <div className={styles.marketingContainer}>
@@ -8,7 +9,8 @@ export default function Collaboration() {
       <div className={styles.marketing}>
         <img src={Collaborationimages} alt="" className={styles.marketingImage} />
       </div>
-        <p>Upcoming Partners...</p>
+      <p>Upcoming Partners...</p>
+      
       <div className={styles.marketingLogoContainer}>
         <div className={styles.marketingLogo}>
           <img src="https://framerusercontent.com/images/QmTOLjwbSVrmr8WrdLdpQ39fvc.webp" alt="" />
@@ -68,7 +70,6 @@ export default function Collaboration() {
           <img src="https://framerusercontent.com/images/gUc8n3bzIs8ukAO2g63CoYwNqFs.webp" alt="" />
         </div>
       </div>
-
     </div>
   )
 }

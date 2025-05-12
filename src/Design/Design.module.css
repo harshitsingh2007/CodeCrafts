@@ -1,292 +1,464 @@
-:root{
+:root {
     --design-template-background: #F2F2F2;
-    --black:#000000;
+    --black: #000000;
+    --white: #FFFFFF;
 }
-.designtemplate{
+
+/* Design Template Section */
+.designtemplate {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 3em;
+    padding: 4rem 1rem;
     background-color: var(--design-template-background);
+    text-align: center;
+    overflow: hidden;
 }
-.designtemplate h1{
-    font-size: 4em;
-    margin-bottom: 0.2em;
-    font-weight: lighter;
+
+.designtemplatecontent {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.designtemplate h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0 auto 1rem;
+    font-weight: 300;
     max-width: 800px;
-    letter-spacing: 0.5px; 
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 0.8s ease-out;
 }
-.designtemplate p{
-    margin: 0 auto 2em auto;
+
+.designtemplate p {
+    margin: 0 auto 2rem;
     max-width: 600px;
     line-height: 1.6;
-    font-size: 16px;
-    margin-bottom: 20px;
-    max-width: 500px;
-    letter-spacing: 0.5px; 
-    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: rgba(0,0,0,0.7);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
+
 .designtemplate a {
-    padding: 0.8em 2em;
-    font-size: 18px;
-    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--white);
     background-color: var(--black);
-    border: none;
     border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: auto;
-    display: inline-block;
     text-decoration: none;
-  }
-  .designtemplate a::after {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 1.5rem 0;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.designtemplate a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.designtemplate a:hover::before {
+    left: 100%;
+}
+
+.designtemplate a::after {
     content: '→';
-    margin-left: 10px;
-    font-size: 20px;
-    transition: transform 0.3s ease;
-    display: inline-block;
-  }
-  
-  .designtemplate a:hover::after {
-    transform: translateX(5px); 
-  }
+    margin-left: 0.5rem;
+    transition: all 0.3s ease;
+}
 
-.designtemplateImage img{
-    object-fit: cover;
-    object-position: 50% 50%;
-    width:100%;
-    margin-top: 2em;
+.designtemplate a:hover::after {
+    transform: translateX(0.3rem);
 }
-/* desingn template */
+
+.designtemplateImage {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+    animation: fadeIn 1s ease-out 0.6s both;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.designtemplateImage img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.designtemplateImage:hover img {
+    transform: scale(1.02);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .designtemplate {
+        padding: 3rem 1rem;
+    }
+    
+    .designtemplate h1 {
+        font-size: 2rem;
+    }
+    
+    .designtemplate a {
+        padding: 0.7rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .designtemplate {
+        padding: 2rem 1rem;
+    }
+    
+    .designtemplate h1 {
+        font-size: 1.8rem;
+    }
+    
+    .designtemplate p {
+        font-size: 1rem;
+    }
+}
 
 
-/* explore design */
-.exploreDesign{
- padding-top: 9.376em;
- padding-left: 4.426em;
- padding-right: 4.426em;
- background-color: #FFFFFF;
+
+
+
+
+
+/* Explore Design Section */
+.exploreDesign {
+    padding: 5rem 1rem;
+    background-color: var(--white);
+    position: relative;
 }
-.exploreDesignContainer{
-  display: flex;
-  justify-content: space-between;
+
+.exploreDesignContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.exploreDesignHeader{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.exploreDesignHeader h1{
-    font-size: 4em;
-    margin-bottom: 0.2em;
-    font-weight: 100;
+
+.exploreDesignHeader {
+    text-align: center;
+    margin-bottom: 3rem;
     max-width: 800px;
-    letter-spacing: 0.5px; 
 }
-.exploreDesignHeader p{
+
+.exploreDesignHeader h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    font-weight: 300;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.exploreDesignHeader p {
     line-height: 1.6;
-    font-size: 16px;
-    margin-bottom: 20px;
-    max-width: 480px;
-    letter-spacing: 0.5px;
-    margin-right: 100px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    margin-bottom: 2rem;
+    color: rgba(0,0,0,0.7);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
+
 .exploreDesignHeader a {
-  padding: 0.8em 1em;
-  font-size: 18px;
-  color: #fff;
-  background-color: var(--black);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-  width: auto;
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center; 
-  text-decoration: none;
-  position: relative; 
-  overflow: hidden; 
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .exploreDesignHeader a::after {
-  content: '→';
-  margin-left: 0; 
-  font-size: 20px;
-  display: inline-block; 
-  transform: translateX(-20px); 
-  opacity: 0; 
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform, opacity;
+    content: '→';
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
 }
+
 .exploreDesignHeader a:hover::after {
-  transform: translateZ(5px); 
-  opacity: 1; 
-  margin-left: 10px; 
+    transform: translateX(0.3rem);
 }
-.exploreDesignContainer2{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
+
+.exploreDesignContainer2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.exploreDesignCard{
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 4em;
+
+.exploreDesignCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
 }
-.exploreDesignCard img{
-  border-radius: 15px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+
+.exploreDesignCard:hover {
+    transform: translateY(-5px);
 }
-.cardImage1{
-width: 568px;
+
+.exploreDesignCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.cardImage2{
-  width: 176px;
-  height: 327px;
+
+.exploreDesignCard:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
-.exploreDesignCard a{
-  text-decoration: underline;
-  margin-top: 20px;
-  line-height: 1.6;
-  font-size: 15px;
-  cursor: pointer;
+
+.cardImage1, .cardImage2 {
+    width: 100% !important;
+    height: auto !important;
 }
-.exploreDesignCard a::after{
-  content: '→';
-  margin-left: 0; 
-  font-size: 20px;
-  display: inline-block; 
-  transform: translateX(-20px); 
-  opacity: 0; 
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform, opacity;
+
+.exploreDesignCard a {
+    margin-top: 1.5rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--black);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.3rem;
 }
+
+.exploreDesignCard a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--black);
+    transition: width 0.3s ease;
+}
+
 .exploreDesignCard a:hover::after {
-  transform: translateZ(5px); 
-  opacity: 1; 
-  margin-left: 10px; 
+    width: 100%;
 }
-.exploreDesignCard a:hover{
+
+.exploreDesignCard a::before {
+    content: '→';
+    margin-left: 0.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.exploreDesignCard a:hover::before {
+    opacity: 1;
+    margin-left: 0.8rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .exploreDesign {
+        padding: 3rem 1rem;
+    }
+    
+    .exploreDesignContainer2 {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exploreDesignHeader h1 {
+        font-size: 1.8rem;
+    }
+    
+    .exploreDesignContainer2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* Join Platform Section */
+.joinPlatform {
+  padding: 5rem 1rem;
+  background-color: var(--design-template-background);
+  position: relative;
+}
+
+.joinPlatformContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.joinPlatformHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.joinPlatformHeader h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
   color: var(--black);
 }
-/* explore design */
 
-/* join platform */
-.joinPlatform {
-  margin-top: 2em;
-  padding-top: 9.376em;
-  padding-left: 4.426em;
-  padding-right: 4.426em;
-  padding-bottom: 5em;
-  background-color: var(--design-template-background);
+.platformCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.joinPlatformContainer1 h1 {
-  font-size: 3em;
-  margin-bottom: 0.2em;
-  font-weight: 100;
-  max-width: 700px;
-  letter-spacing: 0.5px; 
+.platformCard {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
-.joinPlatformContainer1 a {
-  margin-top: 20px;
-  padding: 0.8em 1em;
-  font-size: 18px;
-  color: #fff;
+.platformCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.cardImageWrapper {
+  overflow: hidden;
+}
+
+.platformCard img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.platformCard:hover img {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardContent h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.cardContent a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--white);
   background-color: var(--black);
-  border: none;
   border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-  width: auto;
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center; 
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.joinPlatformContainer1 a::after {
+.cardContent a::after {
   content: '→';
-  margin-left: 0; 
-  font-size: 20px;
-  display: inline-block; 
-  transform: translateX(-20px); 
-  opacity: 0; 
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform, opacity;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
-.joinPlatformContainer1 a:hover::after {
-  transform: translateZ(5px); 
-  opacity: 1; 
-  margin-left: 10px; 
+.cardContent a:hover::after {
+  transform: translateX(0.3rem);
 }
 
-.joinPlatformContainer2 {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4em;
-}
-
-.joinPlatformContainer2Child {
-  display: flex;
-  justify-content: center;
+.joinPlatformHeader a {
+  display: inline-flex;
   align-items: center;
-  flex-direction: column;
-  border: 1px solid black;
-  padding: 1.5em;
-  border-radius: 20px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.joinPlatformContainer2Child img {
-  width: 617px;
-  border-radius: 20px;
-}
-
-.joinPlatformContainer2ChildText {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 3em;
-}
-
-.joinPlatformContainer2ChildText h3 {
-  font-size: 2em;
-  font-weight: 100;
-  max-width: 400px;
-  letter-spacing: 0.5px;
-}
-
-.joinPlatformContainer2ChildText a {
-  font-size: 15px;
-  cursor: pointer;
-  color: white;
+  padding: 0.8rem 2rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--white);
   background-color: var(--black);
-  padding: 0.8em 1em;
   border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.joinPlatformContainer2ChildText a::after {
+.joinPlatformHeader a::after {
   content: '→';
-  margin-left: 0; 
-  font-size: 20px;
-  display: inline-block; 
-  transform: translateX(-20px); 
-  opacity: 0; 
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform, opacity;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
-.joinPlatformContainer2ChildText a:hover::after {
-  transform: translateZ(5px); 
-  opacity: 1; 
-  margin-left: 10px;
+.joinPlatformHeader a:hover::after {
+  transform: translateX(0.3rem);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .joinPlatform {
+    padding: 3rem 1rem;
+  }
+  
+  .platformCards {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .platformCard img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .joinPlatformHeader h1 {
+    font-size: 1.8rem;
+  }
+  
+  .cardContent h3 {
+    font-size: 1.2rem;
+  }
+  
+  .joinPlatformHeader a,
+  .cardContent a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
 }
