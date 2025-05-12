@@ -8,14 +8,16 @@ import Footer from './Footer'
 import NavbarNew from './NavbarNew'
 import './Main.module.css'
 import '../MainPage/Navbar.module.css'
+import AIsection from './AIsection'
 export  const MainPage = () => {
   return (
   <>
 <NavbarNew/>
-<Banner />
 <Slogen/>
 <Collaboration/>
 <BuyDomain/>
+<Banner />
+<AIsection/>
 <TipsForWeb/>
 <Footer/>
     </>

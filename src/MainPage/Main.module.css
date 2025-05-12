@@ -24,7 +24,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2em 1em;
+  padding-top: 8em;
+  padding-bottom: 8em;
   background-color: var(--slogen-background);
 }
 
@@ -345,7 +346,7 @@
 .marketingContainer h3{
   font-size: 1.5rem;
   text-align: center;
-  margin: 25px;
+  /* margin: 25px; */
   font-weight: bold;
 }
 .marketing{
@@ -370,12 +371,43 @@
   width: 1400px; 
   height: 60px;
 }
+.marketingContainer{
+  background-color: var(--faq-background);
+  padding-bottom: 2em;
+  color: var(--footer-text);
+  padding-top: 4em;
+  border-top: 1px solid white;
+}
+.marketingContainer p{
+font-size: 20px;
+font-weight:600;
+text-align: center;
+margin-bottom: 50px;
+}
+.marketingLogoContainer{
+  display: grid;
+  grid-template-columns: repeat(9,minmax(2em,7em));
+  margin-bottom: 30px;
+  grid-gap:20px;
+ margin-left: 155px;
+}
+.marketingLogo {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.marketingLogo img{
+height: 64px;
+width: 64px;
+border-radius: 10px;
+}
+
 /* collaboration */
 
 /* Buy Domain */
 .makeWebsideContainer {
+  border-top: 1px solid white;
   align-items: center;
-  margin-top: 2em;
   padding: 10em;
   background-color: var(--slogen-background);
   color: var(--white);
@@ -1111,3 +1143,74 @@
   border: none;
   background-color: white;
 }
+
+
+
+
+/* ai section */
+.AIMainContainer{
+  display: flex;
+  background: url("https://cdn.prod.website-files.com/66e88746834b80507cdf7933/67ae3c267d585b9677fbe958_ai-bg.avif");
+  width: 100%;
+  height:100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  margin-top: -2px;
+  border-top: 1px solid white;
+}
+.AiHeader{
+  padding-top: 15em;
+  padding-left: 25em;
+}
+.AiHeader h1{
+  font-size:5em;
+  color: white;
+  font-weight: bolder;
+}
+.AiHeader p{
+  text-align: center;
+  color: grey;
+  font-size: 18px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-width: 750px;
+  margin-left: -20px;
+  line-height: 28px;
+  letter-spacing: 0.1px;
+}
+.AiHeader span{
+  font-weight: bold;
+  color: white;
+  margin-left: 1em;
+  margin-top: 1em;
+  font-size: 24px;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.AiHeader span::after{
+    content: '→';
+    margin-left: 0; 
+    font-size: 20px;
+    display: inline-block; 
+    transform: translateX(-20px); 
+    opacity: 0; 
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+}
+
+.AiHeader span:hover::after {
+    transform: translateZ(5px); 
+    opacity: 1; 
+    margin-left: 10px;
+}
+
+/* AI section */
+
+
+

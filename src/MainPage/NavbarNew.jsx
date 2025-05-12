@@ -8,7 +8,6 @@ export default function NavbarNew() {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    // Safely get and parse user data
     try {
       const storedData = localStorage.getItem('userdata');
       if (storedData) {

@@ -10,6 +10,7 @@ import  {TemplateMain}  from './Template/TemplateMain';
 import AboutUs from './About-us/AboutUs';
 import  ContactUs from './ContactUs/ContactUs';
 import TemplatesDiscription from './Template/TemplatesDiscription';
+import Aipage  from './AI-page/Aipage'
 const allroutes = createBrowserRouter([
   {
     path: '/',
@@ -42,6 +43,10 @@ const allroutes = createBrowserRouter([
   {
     path:'/contact',
     element: <ContactUs />
+  },
+  {
+    path:'/aiResponse',
+    element:<Aipage/>
   }
 ]);
 function App() {
