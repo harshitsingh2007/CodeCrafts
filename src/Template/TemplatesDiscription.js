@@ -6,7 +6,11 @@ export default function TemplatesDiscription() {
   return (
     <>
     <NavbarNew/>
-    <h1 className={styles.disprition}>hello templates discription</h1>
+    <h1 className={styles.disprition}>Templates discription</h1>
+  
+     <div>
+        
+     </div>
     <Footer/>
     </>
   )
