@@ -66,6 +66,7 @@
 .gridCard3 {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .navLink {
@@ -79,6 +80,18 @@
 
 .navLink:hover {
   color: #007bff;
+}
+.username{
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  background-color: #007bff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Mega Menu Styles */

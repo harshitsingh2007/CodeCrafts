@@ -14,7 +14,7 @@ export default function TipsForWeb() {
         <div className={styles.tipsItemsChild}>
           <span>
             <a href="" className={styles.tipsGetStarted}>Get Started
-              <span className={styles.arrow}>→</span>
+              {/* <span className={styles.arrow}>→</span> */}
             </a>
           </span>
           <a href="" className={styles.tipsLearnMore}>Learn more →</a>

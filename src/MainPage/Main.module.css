@@ -443,7 +443,6 @@
   height: 64px;
   width: 64px;
   object-fit: contain;
-  filter: grayscale(30%) brightness(0.9);
   transition: all 0.3s ease;
 }
 
@@ -752,11 +751,18 @@
   background-color: var(--slogen-background);
   display: inline-block;
   transition: all 0.3s ease;
+  width: 190px;
 }
-
-.arrow {
+.tipsGetStarted::after{
+  content: "→";
   margin-left: 8px;
-  transition: all 0.3s ease;
+  margin-bottom: 8px;
+  display: none;
+}
+.tipsGetStarted:hover::after{
+  display: inline;
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
 }
 
 .tipsLearnMore {
@@ -1013,8 +1019,7 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   background-color: var(--footer-bg);
-  padding: 4rem 2rem;
-  margin: 0 auto;
+  padding: 2rem 4rem;
 }
 
 .footerContent h2 {
@@ -1063,7 +1068,6 @@
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
-  margin-left: 4.3em;
 }
 
 .socialIcons a {
@@ -1090,10 +1094,12 @@
 .copyright {
   background-color: var(--copyright-bg);
   text-align: center;
-  padding: 1.5rem;
+  padding: 1em;
   font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .copyright a {
   color: var(--primary-color);
   text-decoration: none;
@@ -1149,7 +1155,7 @@
 /* enquire now tab */
 .enquireNowHide{
   position: fixed;
-  top: -100%;
+  top: -200%;
 }
 .enquireNow {
   position: fixed;

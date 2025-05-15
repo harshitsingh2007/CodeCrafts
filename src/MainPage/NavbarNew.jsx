@@ -2,20 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Codecrafts from '../codecrafts.png';
+import Account from '../user-account/Account';
 
 export default function NavbarNew() {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [userData, setUserData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    try {
-      const storedData = localStorage.getItem('userdata');
-      if (storedData) {
-        setUserData(JSON.parse(storedData));
+    const loadUserData = () => {
+      try {
+        const storedData = localStorage.getItem('userdata');
+        if (storedData) {
+          const parsedData = JSON.parse(storedData);
+          if (parsedData?.uname) {
+            setUserData(parsedData);
+          }
+        }
+      } catch (error) {
+        console.error('Error parsing user data:', error);
+        localStorage.removeItem('userdata');
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      console.error('Error parsing user data:', error);
-    }
+    };
+
+    loadUserData();
   }, []);
 
   const toggleMegaMenu = () => {
@@ -48,8 +60,13 @@ export default function NavbarNew() {
           <Link to="/" className={styles.navLink}>Home</Link>
           <Link to="/about" className={styles.navLink}>About</Link>
           <Link to="/contact" className={styles.navLink}>Contact</Link>
-          {userData?.uname ? (
-            <p className={styles.username}>{userData.uname}</p>
+          
+          {isLoading ? (
+            <div className={styles.loading}>...</div>
+          ) : userData?.uname ? (
+            <Link to="/my-account" className={styles.username}>
+              {userData.uname[0].toUpperCase()}
+            </Link>
           ) : (
             <Link to="/login" className={styles.navLink}>Login</Link>
           )}

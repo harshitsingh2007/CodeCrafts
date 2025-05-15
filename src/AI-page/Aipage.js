@@ -41,12 +41,10 @@ function App() {
       const data = await response.json();
       const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response received.";
       
-      // Start video fade out
       if (videoRef.current) {
         videoRef.current.style.opacity = 0;
       }
       
-      // After fade out completes
       setTimeout(() => {
         setResponse(generatedText);
         setShowResponse(true);
@@ -63,6 +61,7 @@ function App() {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       getAIResponse();
+      setPrompt('');
     }
   };
 

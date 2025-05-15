@@ -1,16 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavbarNew from '../MainPage/NavbarNew';
 import TemplateData from '../data/TemplateData';
 import Footer from '../MainPage/Footer.js';
 import styles from './Template.module.css';
 import { Link } from 'react-router-dom';
+
 export function TemplateMain() {
   const [searchTerm, setSearchTerm] = useState('');
-
   const filteredTemplates = TemplateData.filter(template =>
     template.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+
+function addTemplate(template) {
+ 
+  const storedTemplates = localStorage.getItem("mytemplate");
+  let existingTemplates = [];
+  
+  try {
+   
+    existingTemplates = storedTemplates ? JSON.parse(storedTemplates) : [];
+    
+   
+    if (!Array.isArray(existingTemplates)) {
+     
+      if (typeof existingTemplates === 'object' && existingTemplates !== null) {
+        existingTemplates = [existingTemplates];
+      } else {
+        existingTemplates = [];
+      }
+    }
+    
+
+    const templateExists = existingTemplates.some(t => t.title === template.title);
+    
+    if (!templateExists) {
+      
+      const updatedTemplates = [...existingTemplates, template];
+      localStorage.setItem("mytemplate", JSON.stringify(updatedTemplates));
+    }
+  } catch (error) {
+    console.error("Error processing templates:", error);
+   
+    localStorage.setItem("mytemplate", JSON.stringify([template]));
+  }
+}
   return (
     <>
       <NavbarNew />
@@ -32,8 +66,8 @@ export function TemplateMain() {
           {filteredTemplates.length > 0 ? (
             filteredTemplates.map((v, i) => (
               <div key={i} className={`${styles.templateMainGridItem} col-md-4`}>
-                <img src={v.Image} alt={v.title} />
-                <Link to={`/template/${v.title}`}>{v.title}</Link>
+                <img src={v.Image} alt={v.title} onClick={() => addTemplate(v)} />
+                <Link to={`/template/${v.title}`} >{v.title}</Link>
               </div>
             ))
           ) : (

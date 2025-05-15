@@ -6,11 +6,12 @@ import { SignUp } from './signup/SignUp';
 import { LoginPage } from './login/LoginPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { DesignMain}  from './Design/DesignMain';
-import  {TemplateMain}  from './Template/TemplateMain';
+import { TemplateMain } from './Template/TemplateMain';
 import AboutUs from './About-us/AboutUs';
 import  ContactUs from './ContactUs/ContactUs';
 import TemplatesDiscription from './Template/TemplatesDiscription';
 import Aipage  from './AI-page/Aipage'
+import Account from './user-account/Account';
 const allroutes = createBrowserRouter([
   {
     path: '/',
@@ -37,7 +38,7 @@ const allroutes = createBrowserRouter([
    element:<TemplatesDiscription/>
   },
   {
-    path:'about',
+    path:'/about',
     element:<AboutUs/>
   },
   {
@@ -47,7 +48,12 @@ const allroutes = createBrowserRouter([
   {
     path:'/aiResponse',
     element:<Aipage/>
-  }
+  },
+  {
+    path:'my-account',
+    element:<Account/>
+  },
+
 ]);
 function App() {
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Contact.module.css';
 import Footer from '../MainPage/Footer';
+import { Link } from 'react-router-dom';
 export default function ContactUs() {
   const [show, showhide] = useState(false);
 
@@ -17,10 +18,26 @@ export default function ContactUs() {
         </div>
 
         <div className={styles.gridContainer}>
-          <div className={styles.gridCard}><h1>Work</h1></div>
-          <div className={styles.gridCard}><h1>About</h1></div>
-          <div className={styles.gridCard}><h1>Contact</h1></div>
-          <div className={styles.gridCard}><h1>Services</h1></div>
+           <div className={styles.gridCard}>
+            <Link to='/' className={styles.cardLink}>
+            <h1>Home</h1>
+            </Link>
+            </div>
+          <div className={styles.gridCard}>
+            <Link to='/about' className={styles.cardLink}>
+            <h1>About</h1>
+            </Link>
+            </div>
+          <div className={styles.gridCard}>
+            <Link to='/my-account' className={styles.cardLink}>
+            <h1>Profile</h1>
+            </Link>
+            </div>
+          <div className={styles.gridCard}>
+            <Link to='/template' className={styles.cardLink}>
+            <h1>Services</h1>
+            </Link>
+            </div>
         </div>
 
         <div className={`${styles.followUs} ${styles.container}`}>
