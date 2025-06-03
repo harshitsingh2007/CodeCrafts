@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Main.module.css';
+import styles from './AI.module.css';
 import { Link } from 'react-router-dom';
 
 export default function AIsection() {

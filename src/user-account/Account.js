@@ -18,20 +18,44 @@ export default function Account() {
     }
   });
   
+  function createBackup() {
+    const backup = {
+      userdata: localStorage.getItem('userdata'),
+      mytemplate: localStorage.getItem('mytemplate')
+    };
+    localStorage.setItem('backup_data', JSON.stringify(backup));
+    return backup;
+  }
+
   function logout() {
+    createBackup();
+    
     data = JSON.parse(data)
     localStorage.removeItem('userdata')
     toast("Logged Out Successfully")
     window.location.href = "/"
   }
 
-  function removeTemplate(index) {
-    const updatedTemplates = templates.filter((_, i) => i !== index);
+  function restoreFromBackup() {
+    const backup = localStorage.getItem('backup_data');
+    if (backup) {
+      const parsedBackup = JSON.parse(backup);
+      localStorage.setItem('userdata', parsedBackup.userdata);
+      localStorage.setItem('mytemplate', parsedBackup.mytemplate);
+      setTemplates(parsedBackup.mytemplate ? JSON.parse(parsedBackup.mytemplate) : []);
+      toast.success("Data restored successfully!");
+    } else {
+      toast.error("No backup found!");
+    }
+  }
 
-    setTemplates(updatedTemplates);    
-  
-    localStorage.setItem('mytemplate', JSON.stringify(updatedTemplates));
+  function removeTemplate(index) {
+   
+    createBackup();
     
+    const updatedTemplates = templates.filter((_, i) => i !== index);
+    setTemplates(updatedTemplates);    
+    localStorage.setItem('mytemplate', JSON.stringify(updatedTemplates));
     toast.success("Template removed successfully!");
   }
 
@@ -80,7 +104,14 @@ export default function Account() {
           </div>
 
           <div className={styles.logOut}>
-            <button onClick={logout}>Logout</button> 
+            <button onClick={logout}>Logout</button>
+            
+            <button 
+              onClick={restoreFromBackup}
+              style={{ marginLeft: '10px', backgroundColor: '#4CAF50' }}
+            >
+              Restore Data
+            </button>
           </div> 
         </div>
       </div>

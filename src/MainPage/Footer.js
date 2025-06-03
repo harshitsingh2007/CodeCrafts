@@ -3,6 +3,7 @@ import styles from './Main.module.css';
 
 export default function Footer() {
   return (
+    <>
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.footerContent}>
@@ -50,9 +51,10 @@ export default function Footer() {
         </div>
       </div>
 
+    </footer>
       <div className={styles.copyright}>
         <p>© {new Date().getFullYear()} CodeCrafts. All Rights Reserved | Design by <a href="https://www.linkedin.com/in/harshit-singh-8b106b323" target="_blank" rel="noopener noreferrer">Harshit Singh</a></p>
       </div>
-    </footer>
+      </>
   );
 }

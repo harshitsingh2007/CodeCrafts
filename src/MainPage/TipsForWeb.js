@@ -1,23 +1,23 @@
 import React from 'react';
 import styles from './Main.module.css';
+import { Link } from 'react-router-dom';
 
 export default function TipsForWeb() {
   return (
     <div className={styles.tipsContainer}>
       <div className={styles.tipsItems}>
         <div className={styles.tipsItemsChild}>
-          <h2>How to create a website for free</h2>
+          <h2>How to create a website </h2>
         </div>
         <div className={styles.tipsItemsChild}>
           <p>Follow these 7 simple steps to create a website today.</p>
         </div>
         <div className={styles.tipsItemsChild}>
           <span>
-            <a href="" className={styles.tipsGetStarted}>Get Started
-              {/* <span className={styles.arrow}>→</span> */}
-            </a>
+            <Link to='/pricing' className={styles.tipsGetStarted}>Get Started
+            </Link>
           </span>
-          <a href="" className={styles.tipsLearnMore}>Learn more →</a>
+          <Link to='/contact' className={styles.tipsLearnMore}>Learn more</Link>
         </div>
       </div>
 

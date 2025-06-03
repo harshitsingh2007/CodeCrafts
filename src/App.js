@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { MainPage } from './MainPage/MainPage';
 import { SignUp } from './signup/SignUp';
 import { LoginPage } from './login/LoginPage';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { DesignMain}  from './Design/DesignMain';
 import { TemplateMain } from './Template/TemplateMain';
 import AboutUs from './About-us/AboutUs';
@@ -12,6 +12,7 @@ import  ContactUs from './ContactUs/ContactUs';
 import TemplatesDiscription from './Template/TemplatesDiscription';
 import Aipage  from './AI-page/Aipage'
 import Account from './user-account/Account';
+import Pricing from './pricing/Pricing';
 const allroutes = createBrowserRouter([
   {
     path: '/',
@@ -53,11 +54,15 @@ const allroutes = createBrowserRouter([
     path:'my-account',
     element:<Account/>
   },
+  {
+    path:'/pricing',
+    element:<Pricing/>
+  }
 
 ]);
 function App() {
   return (
-      <RouterProvider router={allroutes} />
+    <RouterProvider router={allroutes} />
   );
 }
 
