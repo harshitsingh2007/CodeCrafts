@@ -24,3 +24,7 @@ yarn-error.log*
 
 #under workspace
 src/MainPage/MainNav/
+
+*env
+
+./footer

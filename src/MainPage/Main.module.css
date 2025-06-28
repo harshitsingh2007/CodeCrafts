@@ -176,7 +176,6 @@
 }
 
 .slogen {
-  border-top: 1px solid var(--white);
   padding-top: 80px;
   width: 90%;
   max-width: 80em;
@@ -254,6 +253,7 @@
   cursor: pointer;
   transition: 0.5s;
   width:130px;
+  border-radius: 10px;
 }
 
 /* Video */
@@ -716,6 +716,9 @@
   padding-bottom: 6vw;
   background-color: var(--tips-background);
   gap: 40px;
+  background-color: black;
+  border-top: 1px solid white;
+  color: white;
 }
 
 .tipsItems {
@@ -746,15 +749,16 @@
 }
 
 .tipsGetStarted {
-  color: var(--tips-background);
+  color: var(--copyright-bg);
   text-decoration: none;
   padding: 1em 0.8em;
   border-radius: 35px;
-  background-color: var(--slogen-background);
+  background-color: var(--footer-text);
   display: inline-block;
   width: 190px;
   text-align: center;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
+  font-weight: 700; 
 }
 
 .tipsGetStarted::after {
@@ -771,7 +775,7 @@
 
 .tipsLearnMore {
   margin-left: 30px;
-  color: var(--slogen-background);
+  color: var(--footer-text);
   text-decoration: none;
 }
 .tipsLearnMore::after{

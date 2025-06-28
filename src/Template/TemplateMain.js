@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NavbarNew from '../MainPage/NavbarNew';
+import Navbar2 from '../All-navbar/Navbar2.js';
 import TemplateData from '../data/TemplateData';
 import Footer from '../MainPage/Footer.js';
 import styles from './Template.module.css';
@@ -47,7 +47,7 @@ function addTemplate(template) {
 }
   return (
     <>
-      <NavbarNew />
+      <Navbar2 />
       <div className={styles.templateMain}>
         <div className={`${styles.templateMainContent} container`}>
           <h2>Pick the Website Template You Love</h2>

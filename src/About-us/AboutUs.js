@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import styles from './AboutUs.module.css';
-import NavbarNew from '../MainPage/NavbarNew';
 import Footer from '../MainPage/Footer';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Navbar2 from '../All-navbar/Navbar2';
 
 export default function AboutUs() {
   // Animation controls
@@ -70,7 +70,7 @@ export default function AboutUs() {
 
   return (
     <>
-      <NavbarNew />
+      <Navbar2 />
       <motion.section 
         className={styles.aboutUs}
         initial="hidden"

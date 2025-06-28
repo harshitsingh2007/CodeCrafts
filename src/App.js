@@ -51,14 +51,13 @@ const allroutes = createBrowserRouter([
     element:<Aipage/>
   },
   {
-    path:'my-account',
+    path:'account',
     element:<Account/>
   },
   {
     path:'/pricing',
     element:<Pricing/>
-  }
-
+  },
 ]);
 function App() {
   return (

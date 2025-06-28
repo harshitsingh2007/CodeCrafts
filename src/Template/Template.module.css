@@ -2,6 +2,8 @@
     border-bottom: 1px solid #ccc;
     width: 100%;
     overflow: hidden;
+    background: black;
+    color: white;
 }
 
 .templateMainContent {
@@ -31,7 +33,6 @@
     font-size: 1rem;
     outline: none;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .templateMainContent input[type="search"]:focus {
@@ -41,9 +42,10 @@
 }
 
 .templateMainContent2 {
-    background-color: #F5F7F7;
+    background-color: black;
     transition: background-color 0.4s ease;
     width: 100%;
+    color: white;
 }
 
 .templateMainGrid {
@@ -69,11 +71,13 @@
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     padding: 0.5em;
     border-radius: 8px;
+    color: white;
 }
 
 .templateMainGridItem:hover {
     transform: translateY(-8px);
     background: rgba(255,255,255,0.7);
+
 }
 
 .templateMainGridItem img {
@@ -122,6 +126,7 @@
 }
 
 .templateMainContent3 {
+    border-top: 1px solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,8 +134,9 @@
     padding: 5em 1em;
     text-align: center;
     transition: all 0.4s ease;
-    max-width: 1200px;
     margin: 0 auto;
+    background-color: black;
+    color: white;
 }
 
 .templateMainContent3 h1 {
@@ -150,24 +156,18 @@
 }
 
 .templateMainContent3 a {
-    color: white;
+    color: black;
     font-size: 1rem;
     text-decoration: none;
     padding: 0.8em 2.5em;
     border-radius: 30px;
-    background-color: black;
+    background-color: white;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin-top: 1em;
     display: inline-flex;
     align-items: center;
     position: relative;
     overflow: hidden;
-}
-
-.templateMainContent3 a:hover {
-    background-color: #333;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
 .templateMainContent3 a::after {
@@ -179,6 +179,7 @@
 .templateMainContent3 a:hover::after {
     transform: translateX(4px);
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

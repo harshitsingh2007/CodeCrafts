@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Codecrafts from '../codecrafts.png';
-import Account from '../user-account/Account';
 
 export default function NavbarNew() {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
@@ -64,11 +63,11 @@ export default function NavbarNew() {
           {isLoading ? (
             <div className={styles.loading}>...</div>
           ) : userData?.uname ? (
-            <Link to="/my-account" className={styles.username}>
+            <Link to="/account" className={styles.username}>
               {userData.uname[0].toUpperCase()}
             </Link>
           ) : (
-            <Link to="/login" className={styles.navLink}>Login</Link>
+            <Link to="/signup" className={styles.navLink}>Login</Link>
           )}
         </div>
       </nav>
@@ -92,15 +91,6 @@ export default function NavbarNew() {
                 <li><Link to="/templates/admin" className={styles.megaMenuLink}>Admin Dashboards</Link></li>
                 <li><Link to="/templates/ecommerce" className={styles.megaMenuLink}>E-commerce</Link></li>
                 <li><Link to="/templates/portfolio" className={styles.megaMenuLink}>Portfolio</Link></li>
-              </ul>
-            </div>
-            <div className={styles.megaMenuColumn}>
-              <h3>Resources</h3>
-              <ul className={styles.megaMenuList}>
-                <li><Link to="/tutorials" className={styles.megaMenuLink}>Tutorials</Link></li>
-                <li><Link to="/docs" className={styles.megaMenuLink}>Documentation</Link></li>
-                <li><Link to="/community" className={styles.megaMenuLink}>Community</Link></li>
-                <li><Link to="/support" className={styles.megaMenuLink}>Support</Link></li>
               </ul>
             </div>
             <div className={styles.megaMenuColumn}>

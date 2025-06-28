@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Main.module.css'
+import { Link } from 'react-router-dom';
 function Banner() {
     const [show, hide] = useState(false)
     return (
@@ -13,10 +14,10 @@ function Banner() {
         <h1>Enquire Now</h1>
         <p>Fill out the form below and we'll get back to you</p>
             <form className={styles.enquireForm}>
-            <input type="text"  placeholder="Your Name" required />
+            <input type="text" placeholder="Your Name" required />
             <input type="email"  placeholder="Your Email" required />
           <textarea placeholder="Your Message"  rows="3" required></textarea>
-          <button type="submit" name='index' >Submit</button>
+        <button type="submit" name='index' >Submit</button>
         </form>
       </div>
     </div>

@@ -1,6 +1,7 @@
 .AccountMain{
-    background-color: #ECEFF3;
+    background-color: black;
     padding-bottom: 5em;
+    color: white;
 }
 .AccountHeader{
     display: flex;
@@ -32,11 +33,13 @@ font-weight: 600;
 
 /* body */
 .AccountBodyMain{
-  background-color: white;
+  background-color: black;
   border-radius: 8px;
   padding: 1em;
   margin-top: 2em;
   max-height:max-content;
+  color: white;
+  border: 1px solid #333;
 }
 .AccountBodyMain h1{
   font-weight: 600;
@@ -55,8 +58,8 @@ font-weight: 600;
 }
 .AccountBodyGridButton button{
     border: none;
-    color: white;
-    background-color: black;
+    color:black;
+    background-color:white;
     padding: 5px;
     border-radius: 5px;
 }

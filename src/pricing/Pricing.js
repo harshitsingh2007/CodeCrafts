@@ -1,11 +1,11 @@
 import React from 'react'
-import NavbarNew from '../MainPage/NavbarNew'
+import Navbar2 from '../All-navbar/Navbar2'
 import Footer from '../MainPage/Footer'
 import styles from './Pricing.module.css'
 export default function Pricing() {
   return (
     <>
-      <NavbarNew />
+      <Navbar2/>
       <div className={styles.pricingContainer}>
         <div className={styles.pricingBox1}>
           <p>14 days money back guarantee</p>

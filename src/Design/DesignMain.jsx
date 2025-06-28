@@ -4,11 +4,11 @@ import DesignTemplate from './DesignTemplate'
 import ExploreDesign from './ExploreDesign'
 import JoinPlatorm from './JoinPlatorm'
 import Footer from '../MainPage/Footer'
-import NavbarNew from '../MainPage/NavbarNew'
+import Navbar2 from '../All-navbar/Navbar2'
 export const DesignMain = () => {
   return (
     <>
-       <NavbarNew/>
+       <Navbar2/>
        <DesignTemplate/>
        <ExploreDesign/>
        <JoinPlatorm/>

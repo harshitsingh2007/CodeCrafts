@@ -1,8 +1,8 @@
 import styles from './Account.module.css'
-import NavbarNew from '../MainPage/NavbarNew'
 import Footer from '../MainPage/Footer'
 import { toast, ToastContainer } from 'react-toastify'
 import { useState } from 'react'
+import Navbar2 from '../All-navbar/Navbar2'
 
 export default function Account() {
   let data = localStorage.getItem('userdata')
@@ -62,7 +62,7 @@ export default function Account() {
   return (
     <>
       <ToastContainer/>
-      <NavbarNew />
+      <Navbar2 />
       <div className={styles.AccountMain}>
         <div className={`${styles.Accountcontainer} container`}>
           <div className={styles.AccountHeader}>
