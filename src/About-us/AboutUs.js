@@ -1,248 +1,74 @@
-import React, { useEffect } from 'react';
-import styles from './AboutUs.module.css';
-import Footer from '../MainPage/Footer';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import Navbar2 from '../All-navbar/Navbar2';
-
+import React from 'react'
+import { Link } from 'react-router-dom'
+import NavbarNew from '../All-navbar/NavbarNew'
+import Footer from '../Fotter/Footer'
 export default function AboutUs() {
-  // Animation controls
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: false
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const statItemVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        type: "spring",
-        stiffness: 100
-      }
-    }
-  };
-
-  const stepVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: (i) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.6
-      }
-    })
-  };
-
   return (
     <>
-      <Navbar2 />
-      <motion.section 
-        className={styles.aboutUs}
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <div className={styles.container}>
-          {/* Hero Section */}
-          <motion.div 
-            className={styles.aboutHero}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              Building Digital <span className={styles.highlight}>Success Stories</span>
-            </motion.h1>
-            <motion.p 
-              className={styles.lead}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              We transform business visions into high-performing websites that drive results.
-            </motion.p>
-            <div className={styles.floatingShapes}>
-              <div className={styles.shape1}></div>
-              <div className={styles.shape2}></div>
-              <div className={styles.shape3}></div>
+      <div>
+        <NavbarNew />
+        <div className='w-[1350px] mx-auto pt-[50px]'>
+          <div className='bg-black text-white py-10 px-5 rounded-3xl'>
+            <h1 className='text-[4.8em] font-bold text-center mt-10'>Building Digital Success</h1>
+            <p className='text-center text-[20px] mt-3'>We transform business visions into high-performing websites that drive results.</p>
+          </div>
+          <div>
+            <h3 className='text-[35px] font-bold  mt-10'>Our Story</h3>
+            <p className='text-[20px] leading-2 mt-3'>Founded in 2025, Began by a single Developer <strong> Harshit Singh</strong> of passionate developer who believed every business deserves an exceptional online presence. Today, we've grown into a full-service web development agency serving clients across multiple industries.</p>
+          </div>
+
+          <div className='flex justify-between pl-[100px] pr-[100px] pt-[80px]'>
+            <div className='shadow-xl py-[50px] px-[50px] text-center hover:animate-zoom hover:scale-110 duration-500 delay-100'>
+               <h2 className='font-bold text-[#3498DB] text-[45px]'>150+</h2>
+               <p className='text-[20px] '>Websites Delivered</p>
             </div>
-          </motion.div>
+            <div className='shadow-xl  py-[50px] px-[50px] text-center hover:animate-zoom hover:scale-110 duration-500 delay-100'>
+               <h2 className='font-bold text-[#3498DB] text-[45px]'>98%</h2>
+              <p className='text-[20px]'>Client Satisfaction</p>
+            </div>
+            <div className='shadow-xl  py-[50px] px-[50px] text-center hover:animate-zoom hover:scale-110 duration-500 delay-100'>
+               <h2 className='font-bold text-[#3498DB] text-[45px]'>1</h2>
+              <p className='text-[20px] '>Year Experience</p>
+            </div>
+          </div>
 
-          {/* Our Story */}
-          <motion.div 
-            className={styles.aboutSection}
-            ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={containerVariants}
-          >
-            <motion.h2 variants={itemVariants}>Our Story</motion.h2>
-            <motion.div className={styles.storyContent} variants={itemVariants}>
-              <p>
-                Founded in 2025, Began by a single Developer <strong>Harshit Singh</strong> of passionate developer 
-                who believed every business deserves an exceptional online presence. Today, we've grown into 
-                a full-service web development agency serving clients across multiple industries.
-              </p>
-              <motion.div 
-                className={styles.statsGrid}
-                variants={containerVariants}
-              >
-                <motion.div 
-                  className={styles.statItem}
-                  variants={statItemVariants}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <span className={styles.statNumber}>150+</span>
-                  <span className={styles.statLabel}>Websites Delivered</span>
-                </motion.div>
-                <motion.div 
-                  className={styles.statItem}
-                  variants={statItemVariants}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <span className={styles.statNumber}>98%</span>
-                  <span className={styles.statLabel}>Client Satisfaction</span>
-                </motion.div>
-                <motion.div 
-                  className={styles.statItem}
-                  variants={statItemVariants}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <span className={styles.statNumber}>1</span>
-                  <span className={styles.statLabel}>Years Experience</span>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+            <div className='pt-[6.5em]'>
+            <h1 className='text-[35px] font-bold'>Our Development Process</h1>
+            <div className='flex justify-between pt-[50px] pl-[100px] pr-[100px] '>
 
-          {/* Our Approach */}
-          <motion.div 
-            className={`${styles.aboutSection} ${styles.approachSection}`}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={containerVariants}
-          >
-            <motion.h2 variants={itemVariants}>Our Development Process</motion.h2>
-            <motion.div 
-              className={styles.processSteps}
-              variants={containerVariants}
-            >
-              {[
-                {
-                  num: 1,
-                  title: "Discovery",
-                  desc: "We analyze your business needs and target audience to create the perfect strategy."
-                },
-                {
-                  num: 2,
-                  title: "Design",
-                  desc: "Custom designs that reflect your brand identity and engage your customers."
-                },
-                {
-                  num: 3,
-                  title: "Development",
-                  desc: "Clean, efficient code built with modern technologies for optimal performance."
-                },
-                {
-                  num: 4,
-                  title: "Launch & Support",
-                  desc: "We handle deployment and provide ongoing maintenance and updates."
-                }
-              ].map((step, i) => (
-                <motion.div 
-                  key={i}
-                  className={styles.step}
-                  variants={stepVariants}
-                  custom={i}
-                  whileHover={{ 
-                    y: -10,
-                    boxShadow: "0 15px 30px rgba(0,0,0,0.1)"
-                  }}
-                >
-                  <div className={styles.stepNumber}>{step.num}</div>
-                  <h3>{step.title}</h3>
-                  <p>{step.desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
+            <div className='w-[250px] h-[250px] border-2 border-black p-3 rounded shadow-2xl'>
+              <p className='w-10 h-10 bg-[#7173C6] rounded-[50%] flex justify-center items-center  shadow-[10px_10px_80px_#4E87D1]'>1</p>
+                <h3>Discovery</h3>
+                <p className='pt-[10px]'>We analyze your business needs and target audience to create the perfect strategy.</p>
+            </div>
+              <div className='w-[250px] h-[250px] border-2 border-black p-3 rounded shadow-2xl '>
+              <p className='w-10 h-10 bg-[#7173C6] rounded-[50%]  flex justify-center items-center shadow-[10px_10px_80px_#4E87D1]'>2</p>
+                <h3>Design</h3>
+                <p className='pt-[10px]'>Custom designs that reflect your brand identity and engage your customers.</p>
+            </div>
+            <div className='w-[250px] h-[250px] border-2 border-black p-3 rounded shadow-2xl '>
+              <p className='w-10 h-10 bg-[#7173C6] rounded-[50%] flex justify-center items-center shadow-[10px_10px_80px_#4E87D1]'>3</p>
+              <h3>Development</h3>
+              <p className='pt-[10px]'>Clean, efficient code built with modern technologies for optimal performance.</p>
+            </div>
+              <div className='w-[250px] h-[250px] border-2 border-black p-3 rounded shadow-2xl '>
+              <p className='w-10 h-10 bg-[#7173C6] rounded-[50%] flex justify-center items-center shadow-[10px_10px_80px_#4E87D1]'>4</p>
+                <h3>Launch & Support</h3>
+                <p className='pt-[10px]'>We handle deployment and provide ongoing maintenance and updates.</p>
+            </div>
 
-          {/* CTA Section */}
-          <motion.div 
-            className={styles.ctaSection}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <motion.h2 
-              animate={{
-                scale: [1, 1.05, 1],
-                transition: { repeat: Infinity, duration: 3 }
-              }}
-            >
-              Ready to Build Your Website?
-            </motion.h2>
-            <p>
-              We're currently accepting new projects for {new Date().getFullYear()}. 
-              Let's discuss how we can help grow your business online.
-            </p>
-            <motion.button 
-              className={styles.ctaButton}
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: "#000"
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get a Free Consultation
-              <span className={styles.arrow}>→</span>
-            </motion.button>
-            <div className={styles.pulseEffect}></div>
-          </motion.div>
+            </div>
+            </div>
+           
+
+      <div className='bg-[#202F3B] text-white text-center py-[80px] pb-[90px] mt-[80px] mb-[100px] rounded-3xl'>
+        <h1 className='text-[4em] font-bold'>Ready to Build Your Website?</h1>
+        <p className='pt-[20px] mb-[50px]'>We're currently accepting new projects for 2025. Let's discuss how we can help grow your business online.</p>
+        <Link className='bg-black no-underline text-white p-[12px_18px] hover:shadow-[0px_4px_100px_10px_white] rounded'>Get a Cosultation</Link>
+      </div>
         </div>
-      </motion.section>
-      <Footer />    
+        <Footer />
+      </div>
     </>
-  );
+  )
 }

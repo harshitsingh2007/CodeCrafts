@@ -18,20 +18,16 @@ export default function Navbar2() {
     if (isAnimating) {
       const timer = setTimeout(() => {
         setIsAnimating(false);
-      }, 400); // Match this with your transition duration
+      }, 400); 
       return () => clearTimeout(timer);
     }
   }, [isAnimating]);
 
   return (
     <>
-      {/* Backdrop for better UX */}
-      <div 
-        className={`${styles['navbar-backdrop']} ${open ? 'active' : ''}`} 
-        onClick={toggleMenu}
-      />
+     
+      <div className={`${styles['navbar-backdrop']} ${open ? 'active' : ''}`} onClick={toggleMenu}/>
 
-      {/* Expanded menu */}
       <section className={`bg-black text-white  fixed w-full z-20 ${open ? styles.open : styles.close}`}>
         <header className={styles.navbar2}>
           <div>

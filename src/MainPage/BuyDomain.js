@@ -3,6 +3,7 @@ import styles from './Main.module.css';
 
 export default function BuyDomain() {
   return (
+    <div className='bg-black border-y-2 border-[#ffffff1a]'>
     <div className={styles.makeWebsideContainer}>
       <div className={styles.makeWebsideItems}>
         <h1>Make your website official with your own domain name</h1>
@@ -25,6 +26,7 @@ export default function BuyDomain() {
         <p>Get a
           <a href=""> Custom domain</a> free for one year with the initial purchase of an annual <a href="">Premium Plan</a></p>
       </div>
+    </div> 
     </div>
   );
 }

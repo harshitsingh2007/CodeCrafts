@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Contact.module.css';
-import Footer from '../MainPage/Footer';
+import Footer from '../Fotter/Footer';
 import { Link } from 'react-router-dom';
 export default function ContactUs() {
   const [show, showhide] = useState(false);

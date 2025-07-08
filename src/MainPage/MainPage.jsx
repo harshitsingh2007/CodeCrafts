@@ -4,7 +4,7 @@ import Slogen from './Slogen'
 import Collaboration from './Collaboration'
 import BuyDomain from './BuyDomain'
 import TipsForWeb from './TipsForWeb'
-import Footer from '../MainPage/Footer'
+import Footer from '../Fotter/Footer'
 import NavbarNew from '../All-navbar/NavbarNew'
 import './Main.module.css'
 import '../All-navbar/Navbar.module.css'
@@ -20,7 +20,7 @@ export  const MainPage = () => {
 <Collaboration/>
 <BuyDomain/>
 <Banner />
-<AIsection/>
+{/* <AIsection/> */}
 <TipsForWeb/>
 <Footer/>
     </>
