@@ -13,6 +13,7 @@ import TemplatesDiscription from './Template/TemplatesDiscription';
 import Aipage  from './AI-page/Aipage'
 import Account from './user-account/Account';
 import Pricing from './pricing/Pricing';
+import Domain from './Domain/Domain';
 const allroutes = createBrowserRouter([
   {
     path: '/',
@@ -58,6 +59,10 @@ const allroutes = createBrowserRouter([
     path:'/pricing',
     element:<Pricing/>
   },
+  {
+    path:'domain',
+    element:<Domain/>
+  }
 ]);
 function App() {
   return (
