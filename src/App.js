@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MainPage } from './MainPage/MainPage';
 import { SignUp } from './signup/SignUp';
 import { LoginPage } from './login/LoginPage';
@@ -13,56 +13,27 @@ import TemplatesDiscription from './Template/TemplatesDiscription';
 import Aipage  from './AI-page/Aipage'
 import Account from './user-account/Account';
 import Pricing from './pricing/Pricing';
-const allroutes = createBrowserRouter([
-  {
-    path: '/',
-    element: <MainPage />,
-  },
-  {
-    path: '/signup',
-    element: <SignUp />,
-  },
-  {
-    path: '/login',
-    element: <LoginPage />,
-  },
-  {
-    path:'/design',
-    element:<DesignMain/>
-  },
-  {
-    path:'/template',
-    element:<TemplateMain/>
-  },
-  {
-   path:'/template/:title',
-   element:<TemplatesDiscription/>
-  },
-  {
-    path:'/about',
-    element:<AboutUs/>
-  },
-  {
-    path:'/contact',
-    element: <ContactUs />
-  },
-  {
-    path:'/aiResponse',
-    element:<Aipage/>
-  },
-  {
-    path:'account',
-    element:<Account/>
-  },
-  {
-    path:'/pricing',
-    element:<Pricing/>
-  },
-]);
+import MainPageAdmin from './MainPage-Login/MainPageAdmin';
 function App() {
   return (
-    <RouterProvider router={allroutes} />
-  );
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<MainPage />} />
+    <Route path="/signup" element={<SignUp />} />
+    <Route path="/login" element={<LoginPage />} />
+    <Route path="/design" element={<DesignMain />} />
+    <Route path="/template" element={<TemplateMain />} />
+    <Route path="/template/:title" element={<TemplatesDiscription />} />
+    <Route path="/about" element={<AboutUs />} />
+    <Route path="/contact" element={<ContactUs />} />
+    <Route path="/aiResponse" element={<Aipage />} />
+    <Route path="/account" element={<Account />} />
+    <Route path="/pricing" element={<Pricing />} />
+    <Route path="/Admin/MainPage" element={<MainPageAdmin />} />
+  </Routes>
+</BrowserRouter>
+
+  )
 }
 
 export default App;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Navbar2.module.css';
 import CodeCrafts from '../codecrafts.png';
 import { Link } from 'react-router-dom';
-
+import { CiLocationArrow1 } from "react-icons/ci";
 export default function Navbar2() {
   const [open, setOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -18,27 +18,23 @@ export default function Navbar2() {
     if (isAnimating) {
       const timer = setTimeout(() => {
         setIsAnimating(false);
-      }, 400); // Match this with your transition duration
+      }, 400); 
       return () => clearTimeout(timer);
     }
   }, [isAnimating]);
 
   return (
     <>
-      {/* Backdrop for better UX */}
-      <div 
-        className={`${styles['navbar-backdrop']} ${open ? 'active' : ''}`} 
-        onClick={toggleMenu}
-      />
+     
+      <div className={`${styles['navbar-backdrop']} ${open ? 'active' : ''}`} onClick={toggleMenu}/>
 
-      {/* Expanded menu */}
       <section className={`bg-black text-white  fixed w-full z-20 ${open ? styles.open : styles.close}`}>
         <header className={styles.navbar2}>
           <div>
             <img src={CodeCrafts} alt="CodeCrafts Logo" className='w-[100px] h-[30px]'/>
           </div>
           <div className="flex flex-wrap justify-center ">
-            <Link to='/' className={styles.Links} >Home</Link>
+            <Link to='/' className={styles.Links} >Home </Link>
             <Link to='/about' className={styles.Links}>About</Link>
             <Link to='/contact' className={styles.Links}>Contact</Link>
             <Link to='/signup' className={styles.Links} >SignUp</Link>

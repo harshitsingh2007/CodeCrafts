@@ -46,6 +46,8 @@ export default function NavbarNew() {
           <div>
             <Link to="/design" className={styles.navLink}>Design</Link>
             <Link to="/template" className={styles.navLink}>Template</Link>
+            <Link to="/pricing" className={styles.navLink}>Pricing</Link>
+
           </div>
         </div>
 

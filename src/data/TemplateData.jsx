@@ -36,4 +36,5 @@
       title:"Cleaning Service"
     },
 ]
+
 export default TemplateData;

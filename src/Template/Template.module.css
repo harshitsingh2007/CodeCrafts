@@ -2,7 +2,6 @@
     border-bottom: 1px solid #ccc;
     width: 100%;
     overflow: hidden;
-    background: black;
     color: white;
 }
 
@@ -42,7 +41,6 @@
 }
 
 .templateMainContent2 {
-    background-color: black;
     transition: background-color 0.4s ease;
     width: 100%;
     color: white;
@@ -135,7 +133,6 @@
     text-align: center;
     transition: all 0.4s ease;
     margin: 0 auto;
-    background-color: black;
     color: white;
 }
 

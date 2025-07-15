@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function TipsForWeb() {
   return (
+    <div className='bg-black  border-t-[1px] border-[#ffffff1a]'>
     <div className={styles.tipsContainer}>
       <div className={styles.tipsItems}>
         <div className={styles.tipsItemsChild}>
@@ -69,6 +70,7 @@ export default function TipsForWeb() {
           </ul>
         </div>
       </div>
+    </div> 
     </div>
   );
 }

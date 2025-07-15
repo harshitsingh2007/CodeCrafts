@@ -1,5 +1,5 @@
 import styles from './Account.module.css'
-import Footer from '../MainPage/Footer'
+import Footer from '../Fotter/Footer'
 import { toast, ToastContainer } from 'react-toastify'
 import { useState } from 'react'
 import Navbar2 from '../All-navbar/Navbar2'
