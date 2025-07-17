@@ -35,7 +35,6 @@ function addTemplate(template) {
     const templateExists = existingTemplates.some(t => t.title === template.title);
     
     if (!templateExists) {
-      
       const updatedTemplates = [...existingTemplates, template];
       localStorage.setItem("mytemplate", JSON.stringify(updatedTemplates));
     }
