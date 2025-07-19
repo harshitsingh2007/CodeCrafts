@@ -61,7 +61,6 @@ export default function NavbarNew() {
           <Link to="/" className={styles.navLink}>Home</Link>
           <Link to="/about" className={styles.navLink}>About</Link>
           <Link to="/contact" className={styles.navLink}>Contact</Link>
-          
           {isLoading ? (
             <div className={styles.loading}>...</div>
           ) : userData?.uname ? (
@@ -69,7 +68,7 @@ export default function NavbarNew() {
               {userData.uname[0].toUpperCase()}
             </Link>
           ) : (
-            <Link to="/signup" className={styles.navLink}>Login</Link>
+            <Link to="/signup" className={styles.navLink}>Sign up</Link>
           )}
         </div>
       </nav>

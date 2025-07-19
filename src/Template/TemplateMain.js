@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar2 from '../All-navbar/Navbar2.js';
 import TemplateData from '../data/TemplateData';
-import Footer from '../Fotter/Footer.js';
 import styles from './Template.module.css';
 import { Link } from 'react-router-dom';
 
@@ -46,7 +44,6 @@ function addTemplate(template) {
 }
   return (
     <>
-      <Navbar2 />
       <div className='bg-black'>
       <div className={styles.templateMain}>
         <div className={`${styles.templateMainContent} container`}>
@@ -82,7 +79,6 @@ function addTemplate(template) {
         <a href="">Help Me to Choose</a>
       </div>
 </div>
-      <Footer />
     </>
   );
 }

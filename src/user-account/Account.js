@@ -62,7 +62,6 @@ export default function Account() {
   return (
     <>
       <ToastContainer/>
-      <Navbar2 />
       <div className={styles.AccountMain}>
         <div className={`${styles.Accountcontainer} container`}>
           <div className={styles.AccountHeader}>
@@ -115,7 +114,6 @@ export default function Account() {
           </div> 
         </div>
       </div>
-      <Footer />
     </>
   )
 }

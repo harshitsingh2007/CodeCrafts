@@ -8,11 +8,9 @@ import Navbar2 from '../All-navbar/Navbar2'
 export const DesignMain = () => {
   return (
     <>
-       <Navbar2/>
        <DesignTemplate/>
        <ExploreDesign/>
        <JoinPlatorm/>
-      <Footer/>
     </>
   )
 }

@@ -67,7 +67,6 @@ export default function Pricing() {
 
   return (
     <>
-      <Navbar2 />
       <div className='bg-black'>
         <div className='mx-[1.5em] bg-black'></div>
         <div className='mx-[1.5em] bg-black'>
@@ -163,7 +162,6 @@ export default function Pricing() {
 
         </div>
       </div>
-      <Footer />
     </>
   )
 }

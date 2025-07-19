@@ -1,17 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import NavbarNew from '../All-navbar/NavbarNew'
-import Footer from '../Fotter/Footer'
 export default function AboutUs() {
   return (
     <>
       <div>
-        <NavbarNew />
         <div className='w-[1350px] mx-auto pt-[50px]'>
           <div className='bg-black text-white py-10 px-5 rounded-3xl'>
             <h1 className='text-[4.8em] font-bold text-center mt-10'>Building Digital Success</h1>
             <p className='text-center text-[20px] mt-3'>We transform business visions into high-performing websites that drive results.</p>
           </div>
+          
           <div>
             <h3 className='text-[35px] font-bold  mt-10'>Our Story</h3>
             <p className='text-[20px] leading-2 mt-3'>Founded in 2025, Began by a single Developer <strong> Harshit Singh</strong> of passionate developer who believed every business deserves an exceptional online presence. Today, we've grown into a full-service web development agency serving clients across multiple industries.</p>
@@ -36,22 +34,22 @@ export default function AboutUs() {
             <h1 className='text-[35px] font-bold'>Our Development Process</h1>
             <div className='flex justify-between pt-[50px] pl-[100px] pr-[100px] '>
 
-            <div className='w-[250px] h-[250px] border-2 border-black p-3 rounded shadow-2xl'>
+            <div className='w-[250px] h-[250px] p-3 rounded shadow-2xl'>
               <p className='w-10 h-10 bg-[#7173C6] rounded-[50%] flex justify-center items-center  shadow-[10px_10px_80px_#4E87D1]'>1</p>
                 <h3>Discovery</h3>
                 <p className='pt-[10px]'>We analyze your business needs and target audience to create the perfect strategy.</p>
             </div>
-              <div className='w-[250px] h-[250px] border-2 border-black p-3 rounded shadow-2xl '>
+              <div className='w-[250px] h-[250px]  p-3 rounded shadow-2xl '>
               <p className='w-10 h-10 bg-[#7173C6] rounded-[50%]  flex justify-center items-center shadow-[10px_10px_80px_#4E87D1]'>2</p>
                 <h3>Design</h3>
                 <p className='pt-[10px]'>Custom designs that reflect your brand identity and engage your customers.</p>
             </div>
-            <div className='w-[250px] h-[250px] border-2 border-black p-3 rounded shadow-2xl '>
+            <div className='w-[250px] h-[250px]  p-3 rounded shadow-2xl '>
               <p className='w-10 h-10 bg-[#7173C6] rounded-[50%] flex justify-center items-center shadow-[10px_10px_80px_#4E87D1]'>3</p>
               <h3>Development</h3>
               <p className='pt-[10px]'>Clean, efficient code built with modern technologies for optimal performance.</p>
             </div>
-              <div className='w-[250px] h-[250px] border-2 border-black p-3 rounded shadow-2xl '>
+              <div className='w-[250px] h-[250px]  p-3 rounded shadow-2xl '>
               <p className='w-10 h-10 bg-[#7173C6] rounded-[50%] flex justify-center items-center shadow-[10px_10px_80px_#4E87D1]'>4</p>
                 <h3>Launch & Support</h3>
                 <p className='pt-[10px]'>We handle deployment and provide ongoing maintenance and updates.</p>
@@ -67,7 +65,6 @@ export default function AboutUs() {
         <Link className='bg-black no-underline text-white p-[12px_18px] hover:shadow-[0px_4px_100px_10px_white] rounded'>Get a Cosultation</Link>
       </div>
         </div>
-        <Footer />
       </div>
     </>
   )

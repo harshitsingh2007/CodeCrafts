@@ -1,6 +1,4 @@
 import React from 'react'
-import NavbarNew from '../All-navbar/NavbarNew'
-import Footer from '../Fotter/Footer'
 import { useNavigate } from 'react-router-dom'
 
 export default function MainPageAdmin() {
@@ -8,7 +6,6 @@ export default function MainPageAdmin() {
 
   return (
     <>
-    <NavbarNew/>
       <div className='bg-black text-white '>
         <div className='px-[2%]'>
             
@@ -56,7 +53,6 @@ export default function MainPageAdmin() {
 
 </div>
 </div>
-<Footer/>
     </>
   )
 }
