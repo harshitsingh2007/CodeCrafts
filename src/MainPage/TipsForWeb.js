@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './Main.module.css';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import { FaArrowRight } from "react-icons/fa6";
 export default function TipsForWeb() {
+  const Navigate=useNavigate()
   return (
-    <div className='bg-black  border-t-[1px] border-[#ffffff1a]'>
+    <div className='border-t-[1px] border-[#ffffff1a]'>
     <div className={styles.tipsContainer}>
       <div className={styles.tipsItems}>
         <div className={styles.tipsItemsChild}>
@@ -13,12 +14,9 @@ export default function TipsForWeb() {
         <div className={styles.tipsItemsChild}>
           <p>Follow these 7 simple steps to create a website today.</p>
         </div>
-        <div className={styles.tipsItemsChild}>
-          <span>
-            <Link to='/pricing' className={styles.tipsGetStarted}>Get Started
-            </Link>
-          </span>
-          <Link to='/contact' className={styles.tipsLearnMore}>Learn more</Link>
+        <div className='flex gap-4'>
+             <button className='bg-[#FF9E18] flex gap-2 items-center py-2 px-4 rounded-md hover:bg-white text-black delay-100' onClick={()=>Navigate('/signup')}>Get Started <FaArrowRight/></button>
+          <button  onClick={()=>Navigate('/contact')} className='flex gap-2 items-center px-4 py-2 border-2 border-white rounded-3xl hover:rounded-md delay-200'>Learn more <FaArrowRight/></button>
         </div>
       </div>
 

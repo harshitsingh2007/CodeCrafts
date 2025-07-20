@@ -182,29 +182,6 @@
   margin-bottom: 1em;
 }
 
-#contactUsFormItem31 button {
-  margin-top: 2em;
-  padding: 0.5em 1em;
-  color: white;
-  background-color: black;
-  border: none;
-  font-size: 18px;
-  border-radius: 30px;
-}
-
-#contactUsFormItem41 {
-  margin-top: 6em;
-  background-color: black;
-  padding: 5em;
-  border-radius: 40px;
-  margin-bottom: 11em;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
   .gridCard {

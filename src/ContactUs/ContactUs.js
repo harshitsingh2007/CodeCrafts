@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import styles from './Contact.module.css';
-import Footer from '../Fotter/Footer';
 import { Link } from 'react-router-dom';
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 export default function ContactUs() {
   const [show, showhide] = useState(false);
 
   return (
     <>
-      <header className={`${styles.headerMain} ${show ? styles.open : styles.closed}`}>
+      <header  className={`${styles.headerMain} ${show ? styles.open : styles.closed} `}>
         <div className={styles.container}>
           <div className={styles.contactUs}>
             <p>Contact Us</p>
@@ -41,7 +44,13 @@ export default function ContactUs() {
         </div>
 
         <div className={`${styles.followUs} ${styles.container}`}>
-          <p>Follow Us</p>
+          <p>Follow Us on</p>
+         <div className='flex gap-4 text-2xl'>
+          <FaInstagram/>
+          <FaFacebook/>
+          <FaTwitter/>
+          <FaLinkedin/>
+         </div>
         </div>
       </header>
 
@@ -71,14 +80,8 @@ export default function ContactUs() {
               <input type="text" placeholder="Company Name" required/>
               <input type="text" placeholder="Message" required/>
               <input type="phone" placeholder="Contact Number" required/>
+            <button className='w-[250px] py-2.5 bg-black rounded-md  px-4 mt-4 text-white'>We Contact you Shortly</button>
             </form>
-            <button type='submit'>Let's Work Together</button>
-          </div>
-        </div>
-
-        <div className={`${styles.contactUsFormItem4} container`}>
-          <div id={styles.contactUsFormItem41}>
-            <h1>Tell us about your project</h1>
           </div>
         </div>
       </div>

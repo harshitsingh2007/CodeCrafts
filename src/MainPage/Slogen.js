@@ -1,15 +1,14 @@
 import { useState} from 'react';
 import styles from './Main.module.css';
 import { useNavigate } from 'react-router-dom';
-// Create the context
 export default function Slogen() {
+  const Navigate= useNavigate();
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
   const handleSignupClick = (e) => {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      navigate('/signup');
+      Navigate('/signup');
     }, 1200); 
   };
 
@@ -34,14 +33,11 @@ export default function Slogen() {
                 <div className={styles.slogenContent3Items}>
                   <button
                     className={styles.startBuilding}
-                    onClick={handleSignupClick}
-                    disabled={loading}
-                  >
-                    {loading ? 'Loading...' : 'Start building'}
-                  </button>
+                    onClick={handleSignupClick} disabled={loading}>
+                    {loading ? 'Loading...' : 'Start building'}</button>
                 </div>
                 <div className={styles.slogenContent3Items2}>
-                  <a href="/contact" className={styles.ctaButton}>Learn More</a>
+                  <button onClick={()=>Navigate('/contact')} className={`${styles.ctaButton} mx-4`}>Learn More</button>
                 </div>
               </div>
             </div>

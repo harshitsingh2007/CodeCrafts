@@ -22,7 +22,7 @@ function Banner() {
       </div>
     </div>
     {/* enquire now form end */}
-    <div className='bg-black border-y-[1px] border-[#ffffff1a]'>
+    <div className='border-y-[1px] border-[#ffffff1a]'>
         <div className={styles.bannerContainer}>
             <div className={styles.banner}>
                 <div className={styles.bannerContent}>

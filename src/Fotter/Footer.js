@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 export default function Footer() {
+  const Navigate=useNavigate()
   return (
     <>
       <footer className='bg-black border-y-2 border-solid border-[#ffffff1a]'>
@@ -10,20 +11,20 @@ export default function Footer() {
           </div>
           <div className='grid grid-cols-3 gap-[100px]'>
             <div>
-              <h1 className='text-[20px] text-white pb-[10px]'>Company</h1>
-              <p className='text-sm text-[#adadad] pt-[8px]'>Career</p>
-              <p className='text-sm text-[#adadad] pt-[8px]'>Enterprise</p>
-              <p className='text-sm text-[#adadad] pt-[8px]'>Security</p>
+              <h1 className='text-[20px] text-white pb-[10px] hover:text-white'>Company</h1>
+              <p className='text-sm text-[#adadad] pt-[8px] hover:text-white'>Career</p>
+              <p className='text-sm text-[#adadad] pt-[8px]  hover:text-white'>Enterprise</p>
+              <p className='text-sm text-[#adadad] pt-[8px]  hover:text-white'>Security</p>
             </div>
             <div>
-              <h1 className='text-[20px] text-white pb-[10px]'>Resources</h1>
-              <p className='text-sm text-[#adadad] pt-[8px]'>News</p>
-              <p className='text-sm text-[#adadad] pt-[8px]'>Contact us</p>
+              <h1 className='text-[20px] text-white pb-[10px]  hover:text-white'>Resources</h1>
+              <p className='text-sm text-[#adadad] pt-[8px]  hover:text-white'>News</p>
+              <button onClick={()=>Navigate('/contact')} className='text-sm text-[#adadad] pt-[8px] hover:text-white'>Contact us</button>
             </div>
             <div className='flex flex-col'>
               <h1 className='text-[20px] text-white pb-[10px]'>Social</h1>
-              <p className='text-sm text-[#adadad] pt-[8px]'>Instagram</p>
-              <p className='text-sm text-[#adadad] pt-[8px]'>LinkedIn</p>
+              <a href='' className='text-sm text-[#adadad] pt-[8px] hover:text-white'>Instagram</a>
+              <a href='www.linkedin.com/in/harshit-singh-8b106b323' className='text-sm text-[#adadad] pt-[8px] hover:text-white'>LinkedIn</a>
             </div>
           </div>
         </div>

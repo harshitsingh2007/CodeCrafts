@@ -17,25 +17,23 @@ import Auth from './Component/Auth.jsx';
 import Footer from './Fotter/Footer.js';
 import NavbarNew from './All-navbar/NavbarNew.jsx';
 import Navbar2 from './All-navbar/Navbar2';
-import { useTheme } from './context/TheameContext.js';
 
 function App() {
   const data = localStorage.getItem('userdata');
-  const { darkTheme } = useTheme();
   const location = useLocation();
   
-  const excludeNavFooter = ['/', '/signup', '/login', '/loader', '*'];
+  const excludeNavFooter = [ '/signup', '/login', '/loader', '*','/contact'];
   const shouldShowNavFooter = !excludeNavFooter.includes(location.pathname);
 
   return (
     <>
-      <div className={`${darkTheme ? 'bg-[#080808] text-white' : 'bg-white text-black'} min-h-screen`}>
+      <div>
         {shouldShowNavFooter && (data ? <NavbarNew /> : <Navbar2 />)}
         
         <Routes>
-          <Route path="/" element={<Auth />} />
-          <Route path="/home" element={<Navigate to="/" />} />
-          <Route path="/client" element={<MainPage />} />
+          {/* <Route path="/" element={<Auth />} /> */}
+          {/* <Route path="/home" element={<Navigate to="/" />} /> */}
+          <Route path="/" element={<MainPage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/design" element={<DesignMain />} />

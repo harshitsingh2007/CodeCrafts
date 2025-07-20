@@ -10,10 +10,8 @@
   --grey: #ababab;
   --banner-background: #FFF0E5;
   --banner-button: #3A10E5;
-  --slogen-background: #080808;
   --tips-background: #F1F5F9;
   --white: #ffffff;
-  --faq-background: #121212;
   --highlight-color: #FDFFCB;
   --accent-color: #3366ff;
 }
@@ -176,7 +174,6 @@
 /* slogen section */
 /* Slogen.css */
 .slogenContainer {
-  background-color: var(--slogen-background);
   color: var(--white);
 
 }
@@ -510,7 +507,6 @@
   margin-right: auto;
   align-items: center;
   padding: 10em;
-  background-color:black;
   color: var(--white);
   border-left:1px solid #ffffff1a;
   border-right:1px solid #ffffff1a;
@@ -727,7 +723,6 @@
   padding-left: 4.68vw;
   padding-bottom: 6vw;
   gap: 40px;
-  background-color: black;
   border-left:1px solid #ffffff1a;
   border-right:1px solid #ffffff1a;
   color: white;
