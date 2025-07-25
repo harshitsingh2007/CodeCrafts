@@ -1,8 +1,8 @@
 import styles from './Account.module.css'
-import Footer from '../Fotter/Footer'
+import Footer from '../Component/Fotter/Footer'
 import { toast, ToastContainer } from 'react-toastify'
 import { useState } from 'react'
-import Navbar2 from '../All-navbar/Navbar2'
+import Navbar2 from '../Component/All-navbar/Navbar2'
 
 export default function Account() {
   let data = localStorage.getItem('userdata')
@@ -31,7 +31,7 @@ export default function Account() {
     createBackup();
     
     data = JSON.parse(data)
-    localStorage.removeItem('userdata')
+    localStorage.removeItem('udata')
     toast("Logged Out Successfully")
     window.location.href = "/"
   }

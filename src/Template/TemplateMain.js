@@ -1,84 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import TemplateData from '../data/TemplateData';
-import styles from './Template.module.css';
-import { Link } from 'react-router-dom';
-
+import React from 'react'
+import { TemplateData } from '../data/TemplateData'
+import { LogoData } from '../data/TemplateData'
 export function TemplateMain() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const filteredTemplates = TemplateData.filter(template =>
-    template.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-
-function addTemplate(template) {
- 
-  const storedTemplates = localStorage.getItem("mytemplate");
-  let existingTemplates = [];
-  
-  try {
-   
-    existingTemplates = storedTemplates ? JSON.parse(storedTemplates) : [];
-    
-   
-    if (!Array.isArray(existingTemplates)) {
-     
-      if (typeof existingTemplates === 'object' && existingTemplates !== null) {
-        existingTemplates = [existingTemplates];
-      } else {
-        existingTemplates = [];
-      }
-    }
-    
-
-    const templateExists = existingTemplates.some(t => t.title === template.title);
-    
-    if (!templateExists) {
-      const updatedTemplates = [...existingTemplates, template];
-      localStorage.setItem("mytemplate", JSON.stringify(updatedTemplates));
-    }
-  } catch (error) {
-    console.error("Error processing templates:", error);
-   
-    localStorage.setItem("mytemplate", JSON.stringify([template]));
-  }
-}
   return (
-    <>
-      <div className='bg-black'>
-      <div className={styles.templateMain}>
-        <div className={`${styles.templateMainContent} container`}>
-          <h2>Pick the Website Template You Love</h2>
-          <input
-            type="search"
-            placeholder='Search your template...'
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+    <div className='py-28 bg-black text-white pl-[3em]'>
+      <div className='flex flex-col gap-6'>
+      <div>
+        <h1 className='mb-4 text-[2em] gt-super-font' >Trending Template</h1>
+        <div className='flex overflow-x-auto scrollbar-hide whitespace-nowrap'>
+          {TemplateData.map((template, index) => (
+            <div key={index} className='flex-shrink-0  flex flex-col gap-3 mr-5'>
+              <img src={template.Image} alt="" className='w-[350px] rounded-3xl' />
+              <h4 className='text-[18px] ml-4'>{template.title}</h4>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className={styles.templateMainContent2}>
-        <div className={`${styles.templateMainGrid} row`}>
-          <h1>All Website Templates</h1>
-          {filteredTemplates.length > 0 ? (
-            filteredTemplates.map((v, i) => (
-              <div key={i} className={`${styles.templateMainGridItem} col-md-4`}>
-                <img src={v.Image} alt={v.title} onClick={() => addTemplate(v)} />
-                <Link to={`/template/${v.title}`} >{v.title}</Link>
-              </div>
-            ))
-          ) : (
-            <p>No templates found.</p>
-          )}
+      <div>
+        <h1 className='mb-4 text-[2em] gt-super-font'>Popular Logo</h1>
+        <div>
+          {LogoData.map((logo,index)=>{
+            return(
+               <div>
+              <img key={index} src={logo.Image} alt="" className='w-[350px] rounded-3xl mb-4' />
+              <h4 className='text-[18px] ml-4'>{logo.title}</h4>
+               </div>
+            )
+          })}
         </div>
       </div>
-
-      <div className={styles.templateMainContent3}>
-        <h1>Want Help Picking a Template?</h1>
-        <p>Get tips for finding the template that's right for you.</p>
-        <a href="">Help Me to Choose</a>
-      </div>
-</div>
-    </>
-  );
+    </div>  
+    </div>
+  )
 }

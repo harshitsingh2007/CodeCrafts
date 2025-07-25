@@ -37,4 +37,68 @@
     },
 ]
 
-export default TemplateData;
+const LogoData=[
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+   {
+    title:"",
+    Image:"",
+   },
+]
+
+
+export {TemplateData, LogoData};

@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../Fotter/Footer.js'
-import Navbar2 from '../All-navbar/NavbarNew.jsx'
+import Footer from '../Component/Fotter/Footer.js'
+import Navbar2 from '../Component/All-navbar/NavbarNew.jsx'
 import { Link } from 'react-router-dom'
 export default function Pricing() {
   const plans = [

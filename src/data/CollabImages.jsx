@@ -1,10 +1,8 @@
 const collabImages = [
     {
-     id:1,
      Image:'https://framerusercontent.com/images/QmTOLjwbSVrmr8WrdLdpQ39fvc.webp',
     },
     {
-        id:2,
      Image:"https://framerusercontent.com/images/Un9rlUpop5JTuH46ikGBAx09JYA.webp"
     },
     {

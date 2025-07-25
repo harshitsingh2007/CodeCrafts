@@ -1,12 +1,10 @@
 import React from 'react'
-import NavbarNew from '../All-navbar/NavbarNew'
-import Footer from '../Fotter/Footer'
+import NavbarNew from '../Component/All-navbar/NavbarNew'
+import Footer from '../Component/Fotter/Footer'
 export default function TemplatesDiscription() {
   return (
     <>
-  <NavbarNew/>
 
-  <Footer/>
     </>
   )
 }
