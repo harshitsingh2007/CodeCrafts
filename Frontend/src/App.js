@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { MainPage } from './MainPage/MainPage';
 import { SignUp } from './signup/SignUp';
 import { LoginPage } from './login/LoginPage';
@@ -19,13 +19,14 @@ import Navbar2 from './Component/All-navbar/Navbar2.jsx';
 import OurServices from './pages/services/OurServices.jsx';
 import { useEffect } from 'react';
 import {useLoader}  from './Component/Utils/UseLoader.jsx';
-
+import { userAuthStore } from './auth/auth.js';
 function App() {
-   const isLoading=useLoader();
+const Navigate=useNavigate();
+  const isLoading=useLoader();
   const data = localStorage.getItem('udata');
   const location = useLocation();
-
-  const excludeNavFooter = [ '/signup', '/login', '/loader', '*','/contact'];
+ const { isauth, user } = userAuthStore()
+  const excludeNavFooter = ['/signup', '/login', '/loader', '*','/contact'];
   const shouldShowNavFooter = !excludeNavFooter.includes(location.pathname);
 
   useEffect(() => {
@@ -61,10 +62,8 @@ function App() {
         {shouldShowNavFooter && (data ? <NavbarNew /> : <Navbar2 />)}
         
         <Routes>
-          {/* <Route path="/" element={<Auth />} /> */}
-          {/* <Route path="/home" element={<Navigate to="/" />} /> */}
           <Route path="/" element={<MainPage />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path='/signup' element={(isauth && user?.isVerified) ? (<Navigate to='/'/>):(<SignUp />)} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/design" element={<DesignMain />} />
           <Route path="/template" element={<TemplateMain />} />
@@ -74,8 +73,7 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/admin/MainPage" element={<MainPageAdmin />} />
-          <Route path="/loader" element={<Loader />} />
-          <Route path="*" element={<Error />} />
+         <Route path="*" element={<Error />} />
           <Route path="/services" element={<OurServices />} />
         </Routes>
         

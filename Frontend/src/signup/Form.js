@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MdOutlineVisibility } from "react-icons/md";
 import { MdOutlineVisibilityOff } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 export default function Form() {
     const Navigate=useNavigate()
     const [visible, setVisible] = useState(false)
@@ -20,15 +22,21 @@ export default function Form() {
         })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        localStorage.setItem("udata",JSON.stringify(data))
-        e.target.reset();
-        Navigate("/")
+        try {
+            const response = await axios.post("http://localhost:4000/api/auth/signup", data);
+            console.log(response.data);
+            localStorage.setItem("udata", JSON.stringify(data));
+            setdata({
+                email: "", password: ""
+            });
+            Navigate("/");
+        } catch (error) {
+            console.log(error.message);
+        }
     }
-     
-    
-    
+
     return (
         <div className='p-7 flex justify-center'>
             <div className='bg-white rounded-xl text-black w-[450px] h-[500px] py-4 px-4'>
@@ -41,7 +49,7 @@ export default function Form() {
                     <span className="px-3 text-sm text-gray-500">OR</span>
                     <div className="flex-1 h-px bg-gray-300"></div>
                 </div>
-                <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+                <form onSubmit={handleSubmit} method='POST' className='flex flex-col gap-4'>
                     <div className='flex flex-col gap-2'>
                         <label htmlFor="">Email</label>
                         <input type="email" name='email' onChange={getVaue} value={data.email} placeholder='Enter your email' required className='py-2 border-[1px] border-black rounded-lg px-2 shadow-md' />
