@@ -29,7 +29,7 @@ export default function Form() {
         e.preventDefault();
         try {
             const response = await axios.post(`${API_URL}/api/auth/signup`, data, {
-                withCredentials: true, // Important for cookies/sessions
+                withCredentials: true,
                 headers: {
                     'Content-Type': 'application/json'
                 }

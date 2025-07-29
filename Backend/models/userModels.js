@@ -21,6 +21,7 @@ const userSchema= new mongoose.Schema({
     varificationToken:String,
     varificationTokenExpiry:String,
     resetpassword:String,
+    resetpasswordExpiery:String,
 },{timestamps:true});
 
-export const user=mongoose.model('User',userSchema);
+export const User = mongoose.model('User', userSchema);

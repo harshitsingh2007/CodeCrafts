@@ -1,17 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { MainPage } from './MainPage/MainPage';
-import { SignUp } from './signup/SignUp';
-import { LoginPage } from './login/LoginPage';
+import { SignUp } from './Authorization/signup/SignUp.js';
+import { LoginPage } from './Authorization/login/LoginPage.js';
 import { DesignMain } from './Design/DesignMain';
 import {TemplateMain}  from './Template/TemplateMain';
 import AboutUs from './About-us/AboutUs';
 import ContactUs from './ContactUs/ContactUs';
-import TemplatesDiscription from './Template/TemplatesDiscription';
 import Account from './user-account/Account';
 import Pricing from './pricing/Pricing';
-import MainPageAdmin from './MainPage-Login/MainPageAdmin';
-import Error from './404-page/Error';
+import MainPageAdmin from './pages/Admin/Admin-login/MainPageAdmin.js';
+import Error from './Component/404-page/Error.jsx';
 import Loader from './Component/Utils/Loader.jsx';
 import Footer from './Component/Fotter/Footer.js';
 import NavbarNew from './Component/All-navbar/NavbarNew.jsx';
@@ -19,13 +18,14 @@ import Navbar2 from './Component/All-navbar/Navbar2.jsx';
 import OurServices from './pages/services/OurServices.jsx';
 import { useEffect } from 'react';
 import {useLoader}  from './Component/Utils/UseLoader.jsx';
-
+import { userAuthStore } from './auth/auth.js';
 function App() {
-   const isLoading=useLoader();
+const Navigate=useNavigate();
+  const isLoading=useLoader();
   const data = localStorage.getItem('udata');
   const location = useLocation();
-
-  const excludeNavFooter = [ '/signup', '/login', '/loader', '*','/contact'];
+ const { isauth, user } = userAuthStore()
+  const excludeNavFooter = ['/signup', '/login', '/loader', '*','/contact'];
   const shouldShowNavFooter = !excludeNavFooter.includes(location.pathname);
 
   useEffect(() => {
@@ -58,24 +58,20 @@ function App() {
   return (
     <>
       <div tabIndex={0}>
-        {shouldShowNavFooter && (data ? <NavbarNew /> : <Navbar2 />)}
+        {shouldShowNavFooter && (isauth ? <NavbarNew /> : <Navbar2 />)}
         
         <Routes>
-          {/* <Route path="/" element={<Auth />} /> */}
-          {/* <Route path="/home" element={<Navigate to="/" />} /> */}
           <Route path="/" element={<MainPage />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path='/signup' element={(isauth && user?.isVerified) ? (<Navigate to='/'/>):(<SignUp />)} />
+          <Route path='/login' element={(isauth && user?.isVerified) ? (<Navigate to='/'/>):(<LoginPage />)} />
           <Route path="/design" element={<DesignMain />} />
           <Route path="/template" element={<TemplateMain />} />
-          <Route path="/template/:title" element={<TemplatesDiscription />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/admin/MainPage" element={<MainPageAdmin />} />
-          <Route path="/loader" element={<Loader />} />
-          <Route path="*" element={<Error />} />
+         <Route path="*" element={<Error />} />
           <Route path="/services" element={<OurServices />} />
         </Routes>
         
